@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Lemur Logic Adventure"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+run/main_scene="res://scenes/true_false.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameController="*res://scripts/global.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [rendering]
 

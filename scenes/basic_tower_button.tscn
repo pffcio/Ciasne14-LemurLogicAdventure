@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://lyu450o3cifu"]
+
+[ext_resource type="Script" path="res://scripts/tower_button.gd" id="1_5pbyc"]
+[ext_resource type="Texture2D" uid="uid://cqfb20klar6u6" path="res://Arts/aseprite/menu_ui/tower.png" id="2_fo0po"]
+
+[node name="Basic_Tower_Button" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5pbyc")
+tower_type = "Basic"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_fo0po")
+offset = Vector2(16, 16)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

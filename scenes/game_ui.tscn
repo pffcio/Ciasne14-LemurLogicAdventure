@@ -1,8 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://ejq3bisdpjwr"]
+[gd_scene load_steps=19 format=3 uid="uid://ejq3bisdpjwr"]
 
 [ext_resource type="Texture2D" uid="uid://dhk6hxdow5r48" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Default.svg" id="1_c26wg"]
+[ext_resource type="Texture2D" uid="uid://dnegmh1fkfnm5" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Logotype/NameBack.svg" id="3_8olry"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_tdk8f"]
+[ext_resource type="PackedScene" uid="uid://ciibw2u1qd6jc" path="res://scenes/crossbow_tower_button.tscn" id="4_ncwib"]
 [ext_resource type="Texture2D" uid="uid://k1vrp4dbodm7" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Pause/Hover.svg" id="5_sn4v5"]
+[ext_resource type="PackedScene" uid="uid://lyu450o3cifu" path="res://scenes/basic_tower_button.tscn" id="5_xdyks"]
 [ext_resource type="Texture2D" uid="uid://c7mnssn5v27db" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Pause/Default.svg" id="6_k5c0c"]
 [ext_resource type="Texture2D" uid="uid://csxee5pg1ljo1" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Hover.svg" id="7_udq8u"]
 [ext_resource type="Texture2D" uid="uid://btpnjpe2y6dpf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Default.svg" id="8_e6s2d"]
@@ -13,6 +16,9 @@ texture = ExtResource("5_sn4v5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gorku"]
 texture = ExtResource("6_k5c0c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4met"]
+texture = ExtResource("3_8olry")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anapn"]
 
@@ -38,15 +44,55 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Pause" type="Button" parent="CanvasLayer"]
-offset_left = 1030.0
+[node name="Normal_UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pause" type="Button" parent="CanvasLayer/Normal_UI"]
+layout_mode = 0
+offset_left = 35.0
 offset_top = 25.0
-offset_right = 1117.0
+offset_right = 122.0
 offset_bottom = 112.0
 theme_override_styles/pressed = SubResource("StyleBoxTexture_senwo")
 theme_override_styles/normal = SubResource("StyleBoxTexture_gorku")
 
+[node name="Tower_panel" type="Panel" parent="CanvasLayer/Normal_UI"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = 655.0
+offset_bottom = -388.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxTexture_p4met")
+
+[node name="FlowContainer" type="FlowContainer" parent="CanvasLayer/Normal_UI"]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 37.0
+offset_right = 1110.0
+offset_bottom = 607.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+vertical = true
+
+[node name="Crossbow_Tower_Button" parent="CanvasLayer/Normal_UI/FlowContainer" instance=ExtResource("4_ncwib")]
+layout_mode = 2
+
+[node name="Basic_Tower_Button" parent="CanvasLayer/Normal_UI/FlowContainer" instance=ExtResource("5_xdyks")]
+layout_mode = 2
+
 [node name="Pause_menu" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

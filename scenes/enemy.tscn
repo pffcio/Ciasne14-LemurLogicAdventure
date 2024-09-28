@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://is5ms33rksvh"]
+
+[ext_resource type="Script" path="res://scripts/path_follow_enemy.gd" id="1_btn1h"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qaoq2"]
+[ext_resource type="Texture2D" uid="uid://cvwx7c2thyfuf" path="res://images/baloon.png" id="2_2h1ok"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7ia4"]
+radius = 112.0
+
+[node name="PathFollow2D" type="PathFollow2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_btn1h")
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+script = ExtResource("1_qaoq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("2_2h1ok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(-5, -22)
+shape = SubResource("CircleShape2D_w7ia4")
