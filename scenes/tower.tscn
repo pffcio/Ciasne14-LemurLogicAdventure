@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_x6res"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5vlf"]
-size = Vector2(202, 132)
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwakj"]
+radius = 100.0
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_x6res")
@@ -14,8 +14,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
-position = Vector2(0, -78)
-shape = SubResource("RectangleShape2D_a5vlf")
+shape = SubResource("CircleShape2D_bwakj")
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_area_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_area_exited"]

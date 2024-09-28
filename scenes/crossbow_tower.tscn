@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1dehc7i7gqgy"]
+[gd_scene load_steps=9 format=3 uid="uid://uhlpvfijxh3p"]
 
 [ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="1_33634"]
 [ext_resource type="Texture2D" uid="uid://bh6h7daeg34yi" path="res://Arts/aseprite/towers/crossbow_tower/crossbow.png" id="2_lcoth"]
@@ -39,6 +39,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqfds"]
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
 [node name="CrossbowTower" type="Node2D"]
 
 [node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("1_33634")]
@@ -49,3 +55,10 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_qhprd")
 frame = 2
 frame_progress = 0.814577
+
+[node name="Area" type="Panel" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vqfds")

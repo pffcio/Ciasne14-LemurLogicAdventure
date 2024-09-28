@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m8u5k5shp3qk"
-path="res://.godot/imported/Dog500.png-be158cddc1c2e97788880b6325a2509b.ctex"
+uid="uid://j6b53c2iu45q"
+path="res://.godot/imported/Free Chiptune Metadata.png-ed54bacf73195a30678cbfb7ba0a63a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Dog500.png"
-dest_files=["res://.godot/imported/Dog500.png-be158cddc1c2e97788880b6325a2509b.ctex"]
+source_file="res://Free Chiptune Metadata.png"
+dest_files=["res://.godot/imported/Free Chiptune Metadata.png-ed54bacf73195a30678cbfb7ba0a63a0.ctex"]
 
 [params]
 

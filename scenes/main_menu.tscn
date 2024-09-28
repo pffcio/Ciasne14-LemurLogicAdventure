@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjofnifak10rp"]
+[gd_scene load_steps=12 format=3 uid="uid://cjofnifak10rp"]
 
-[ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_844tw"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_s2nlu"]
 [ext_resource type="Texture2D" uid="uid://k7ovxq5oubcj" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Background/Vector/Forest.svg" id="2_n8gng"]
+[ext_resource type="PackedScene" uid="uid://hncubbsjhedo" path="res://scenes/levels/level1.tscn" id="2_v0yux"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_m4k4n"]
 [ext_resource type="Texture2D" uid="uid://8ucsyo2iqyj0" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Hover.svg" id="4_bf83e"]
 [ext_resource type="Texture2D" uid="uid://dohawxjhakiwm" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Default-1.svg" id="5_bygv2"]
@@ -26,7 +27,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_844tw")
+script = ExtResource("1_s2nlu")
+first_level = ExtResource("2_v0yux")
 
 [node name="Forest" type="Sprite2D" parent="."]
 position = Vector2(583, 321)
@@ -81,3 +83,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_pl458")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uyvxc")
 theme_override_styles/normal = SubResource("StyleBoxTexture_uyvxc")
 text = "Quit"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
