@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ojfkvvehiwu8"]
+[gd_scene load_steps=6 format=3 uid="uid://c0f12ma5gs11h"]
 
+[ext_resource type="Script" path="res://scenes/lemur_question_1_3.gd" id="1_fatpl"]
 [ext_resource type="Script" path="res://scenes/lemur_question_1_3.gd" id="1_fatpl"]
 [ext_resource type="Texture2D" uid="uid://b0iptiy0spl24" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="1_tccx4"]
 [ext_resource type="Texture2D" uid="uid://drckpgn7nny6g" path="res://Arts/aseprite/lemur/lemur_static.png" id="2_pekno"]
+[ext_resource type="Script" path="res://scenes/VBoxContainerShake.gd" id="3_4xmg7"]
 [ext_resource type="Script" path="res://scenes/VBoxContainerShake.gd" id="3_4xmg7"]
 
 [sub_resource type="Curve" id="Curve_8865e"]
