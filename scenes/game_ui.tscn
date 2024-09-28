@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjofnifak10rp"]
+[gd_scene load_steps=11 format=3 uid="uid://cd1tn3mn1twu0"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_6rof4"]
 [ext_resource type="Texture2D" uid="uid://k7ovxq5oubcj" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Background/Vector/Forest.svg" id="1_bhok8"]
