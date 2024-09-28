@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m8u5k5shp3qk"
-path="res://.godot/imported/Dog500.png-be158cddc1c2e97788880b6325a2509b.ctex"
+uid="uid://cnmk5v5afvmw2"
+path="res://.godot/imported/penguin4.png-5c6ef55b2b2d1da4d907e0c864c187ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Dog500.png"
-dest_files=["res://.godot/imported/Dog500.png-be158cddc1c2e97788880b6325a2509b.ctex"]
+source_file="res://Arts/aseprite/enemies/penguin4.png"
+dest_files=["res://.godot/imported/penguin4.png-5c6ef55b2b2d1da4d907e0c864c187ca.ctex"]
 
 [params]
 

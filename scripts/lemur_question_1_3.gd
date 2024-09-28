@@ -7,19 +7,20 @@ var question4: Array = ["res://Images/House500.png", "Wskaż prawdziwe zdanie", 
 var question5: Array = ["res://Images/Dog500.png", "Wskaż nie-prawdziwe zdanie", "To jest pies","To nie jest pies","Ten pies ma obrożę","To nie jest dom", 3]
 var question6: Array = ["res://Images/Dog500.png", "Wskaż prawdziwe zdanie", "To jest kot","To jest lemur","To jest pies","To jest dom", 4]
 var question7: Array = ["res://Images/Sun500.png", "Wskaż nie-prawdziwe zdanie", "Słońce jest uśmiechnięte","To jest pies","To jest Słońce","To nie jest lemur", 3]
-var question8: Array = ["res://Images/Sun500.png", "Wskaż prawdziwe zdanie", "To jest Słońce","Pada deszcz","To jest lemur","To jest dom", 3]
+var question8: Array = ["res://Images/Sun500.png", "Wskaż prawdziwe zdanie", "To jest Słońce","Pada deszcz","To jest lemur","To jest dom", 2]
 var question9: Array = ["res://Images/TeddyBear500.png", "Wskaż nie-prawdziwe zdanie", "To jest pluszowy miś","Miś ma kokardkę","To jest dom","To nie jest dom", 4]
 var question10: Array = ["res://Images/TeddyBear500.png", "Wskaż prawdziwe zdanie", "To jest kot","To jest pies","To jest pluszowy miś","To jest dom", 4]
 
 var questions: Array = [question1,question2,question3,question4,question5,question6,question7,question8,question9,question10]
 var question_selected
 
-var buttons:Array=[$VBoxContainer/Answers/A1,$VBoxContainer/Answers/A2,$VBoxContainer/Answers/A3,$VBoxContainer/Answers/A4]
+var answered = false
 
 var dialogSoundCollection:Array=[]
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer 
 
 func _ready():
+	audio_player.finished.connect(_on_audio_finished)
 	dialogSoundCollection.append(load("res://Sounds/Correct.mp3"))
 	dialogSoundCollection.append(load("res://Sounds/Wrong.mp3"))
 	question_selected = get_random_question()
@@ -54,10 +55,12 @@ func check_for_correct_answer(answer_text):
 	var q = question_selected[question_selected[6]]
 	if(answer_text == question_selected[question_selected[6]]):
 		print("Correct")
+		GameController.correct_answers_true_false = GameController.correct_answers_true_false + 1
 		audio_player.stream = dialogSoundCollection[0]  # Set the stream to the sound from the list
 		audio_player.play()
 		$Particle.emitting = true
 		disable_all_buttons()
+		answered = true
 	else:
 		print("Wrong")
 		audio_player.stream = dialogSoundCollection[1]  # Set the stream to the sound from the list
@@ -69,3 +72,10 @@ func disable_all_buttons():
 	$VBoxContainer/Answers/A2.disabled = true
 	$VBoxContainer/Answers/A3.disabled = true
 	$VBoxContainer/Answers/A4.disabled = true
+
+func _on_audio_finished():
+	if(answered && GameController.correct_answers_true_false<GameController.max_correct_answers_true_false):
+		print(GameController.correct_answers_true_false)
+		get_tree().reload_current_scene()
+	if(GameController.correct_answers_true_false==GameController.max_correct_answers_true_false):
+		print("Kolejna scena")

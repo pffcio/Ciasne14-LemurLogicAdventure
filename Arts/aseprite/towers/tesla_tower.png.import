@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m8u5k5shp3qk"
-path="res://.godot/imported/Dog500.png-be158cddc1c2e97788880b6325a2509b.ctex"
+uid="uid://110urwoh5in7"
+path="res://.godot/imported/tesla_tower.png-926d3358eeacf686183b3f25d56745a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Dog500.png"
-dest_files=["res://.godot/imported/Dog500.png-be158cddc1c2e97788880b6325a2509b.ctex"]
+source_file="res://Arts/aseprite/towers/tesla_tower.png"
+dest_files=["res://.godot/imported/tesla_tower.png-926d3358eeacf686183b3f25d56745a9.ctex"]
 
 [params]
 
