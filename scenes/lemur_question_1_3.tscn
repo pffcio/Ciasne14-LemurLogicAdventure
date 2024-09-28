@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0f12ma5gs11h"]
+
+[ext_resource type="Texture2D" uid="uid://b0iptiy0spl24" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="1_tccx4"]
+[ext_resource type="Texture2D" uid="uid://drckpgn7nny6g" path="res://Arts/aseprite/lemur/lemur_static.png" id="2_pekno"]
+
+[node name="Lemur Question 1 3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tccx4")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_pekno")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_pekno")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Dialog" type="Label" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Cześć! Jestem Wojtek, lemur, który uwielbia skakać po drzewach, ale także po... logicznych myślach! Dzisiaj chciałbym Cię zaprosić na wyjątkową przygodę – razem poznamy coś, co nazywa się logiką klasyczną. Może brzmi to trochę poważnie, ale zapewniam, że to świetna zabawa dla Twojego bystrego umysłu! Gotowy? No to skaczemy!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
