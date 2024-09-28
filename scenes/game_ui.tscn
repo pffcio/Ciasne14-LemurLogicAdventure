@@ -1,83 +1,99 @@
-[gd_scene load_steps=11 format=3 uid="uid://cd1tn3mn1twu0"]
+[gd_scene load_steps=15 format=3 uid="uid://ejq3bisdpjwr"]
 
-[ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_6rof4"]
-[ext_resource type="Texture2D" uid="uid://k7ovxq5oubcj" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Background/Vector/Forest.svg" id="1_bhok8"]
-[ext_resource type="Texture2D" uid="uid://dohawxjhakiwm" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Default-1.svg" id="2_yaxy4"]
+[ext_resource type="Texture2D" uid="uid://dhk6hxdow5r48" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Default.svg" id="1_c26wg"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_tdk8f"]
-[ext_resource type="Texture2D" uid="uid://8ucsyo2iqyj0" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Hover.svg" id="4_iyxek"]
+[ext_resource type="Texture2D" uid="uid://k1vrp4dbodm7" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Pause/Hover.svg" id="5_sn4v5"]
+[ext_resource type="Texture2D" uid="uid://c7mnssn5v27db" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Pause/Default.svg" id="6_k5c0c"]
+[ext_resource type="Texture2D" uid="uid://csxee5pg1ljo1" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Hover.svg" id="7_udq8u"]
+[ext_resource type="Texture2D" uid="uid://btpnjpe2y6dpf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Default.svg" id="8_e6s2d"]
+[ext_resource type="Texture2D" uid="uid://ubiw6ifbg12l" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Hover.svg" id="9_m4bq8"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43ny6"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_senwo"]
+texture = ExtResource("5_sn4v5")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yl4bw"]
-texture = ExtResource("4_iyxek")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gorku"]
+texture = ExtResource("6_k5c0c")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uyvxc"]
-texture = ExtResource("2_yaxy4")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anapn"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08w1i"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cocbe"]
+texture = ExtResource("7_udq8u")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pl458"]
-texture = ExtResource("4_iyxek")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqa4q"]
+texture = ExtResource("8_e6s2d")
 
-[node name="Main Menu" type="Control"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pxt1i"]
+texture = ExtResource("9_m4bq8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xg08t"]
+texture = ExtResource("1_c26wg")
+
+[node name="game_ui" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6rof4")
 
-[node name="Forest" type="Sprite2D" parent="."]
-position = Vector2(583, 321)
-texture = ExtResource("1_bhok8")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Start" type="Button" parent="."]
+[node name="Pause" type="Button" parent="CanvasLayer"]
+offset_left = 1030.0
+offset_top = 25.0
+offset_right = 1117.0
+offset_bottom = 112.0
+theme_override_styles/pressed = SubResource("StyleBoxTexture_senwo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gorku")
+
+[node name="Pause_menu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Pause_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Pause_menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -102.0
-offset_top = -46.0
-offset_right = 102.0
-offset_bottom = 46.0
+offset_left = -90.0
+offset_top = -101.0
+offset_right = 336.0
+offset_bottom = 43.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
-theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
-theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
-theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
 theme_override_fonts/font = ExtResource("3_tdk8f")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_43ny6")
-theme_override_styles/hover = SubResource("StyleBoxTexture_yl4bw")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_uyvxc")
-theme_override_styles/normal = SubResource("StyleBoxTexture_uyvxc")
-text = "Start"
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_anapn")
+text = "Pause"
 
-[node name="Quit" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -102.0
-offset_top = 94.0
-offset_right = 102.0
-offset_bottom = 186.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
-theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
-theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
-theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
-theme_override_fonts/font = ExtResource("3_tdk8f")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_08w1i")
-theme_override_styles/hover = SubResource("StyleBoxTexture_pl458")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_uyvxc")
-theme_override_styles/normal = SubResource("StyleBoxTexture_uyvxc")
-text = "Quit"
+[node name="Resume" type="Button" parent="CanvasLayer/Pause_menu"]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 342.0
+offset_right = 554.0
+offset_bottom = 429.0
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cocbe")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wqa4q")
+
+[node name="Home" type="Button" parent="CanvasLayer/Pause_menu"]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 342.0
+offset_right = 690.0
+offset_bottom = 429.0
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
