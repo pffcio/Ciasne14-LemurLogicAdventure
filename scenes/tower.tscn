@@ -1,23 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2vmkl8xii07s"]
+[gd_scene load_steps=3 format=3 uid="uid://b2vmkl8xii07s"]
 
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_x6res"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4yo7j"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_pdbln"]
-radius = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5vlf"]
+size = Vector2(202, 132)
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_x6res")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(6, 6)
-texture = SubResource("PlaceholderTexture2D_4yo7j")
-
 [node name="Range" type="Area2D" parent="."]
+disable_mode = 1
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
-shape = SubResource("CircleShape2D_pdbln")
+position = Vector2(0, -78)
+shape = SubResource("RectangleShape2D_a5vlf")
 
-[connection signal="area_entered" from="Range" to="." method="_on_range_area_entered"]
-[connection signal="area_exited" from="Range" to="." method="_on_range_area_exited"]
+[connection signal="body_entered" from="Range" to="." method="_on_range_area_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_area_exited"]
