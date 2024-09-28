@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1dehc7i7gqgy"]
+
+[ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="1_33634"]
+[ext_resource type="Texture2D" uid="uid://bh6h7daeg34yi" path="res://Arts/aseprite/towers/crossbow_tower/crossbow.png" id="2_lcoth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miveh"]
+atlas = ExtResource("2_lcoth")
+region = Rect2(0, 24, 64, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdhc7"]
+atlas = ExtResource("2_lcoth")
+region = Rect2(64, 24, 64, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f68q"]
+atlas = ExtResource("2_lcoth")
+region = Rect2(128, 24, 64, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtko3"]
+atlas = ExtResource("2_lcoth")
+region = Rect2(192, 24, 64, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhprd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miveh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdhc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f68q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtko3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CrossbowTower" type="Node2D"]
+
+[node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("1_33634")]
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tower"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qhprd")
+frame = 2
+frame_progress = 0.814577
