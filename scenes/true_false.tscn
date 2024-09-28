@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxralucldrihf"]
 
-[ext_resource type="Texture2D" uid="uid://1l3kjficnq7o" path="res://images/Cat500.png" id="1_v28ge"]
+[ext_resource type="Texture2D" uid="uid://1l3kjficnq7o" path="res://Images/Cat500.png" id="1_v28ge"]
 
 [node name="TrueFalse" type="Control"]
 layout_mode = 3
