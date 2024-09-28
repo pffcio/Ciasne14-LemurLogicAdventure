@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1l3kjficnq7o"
-path="res://.godot/imported/Cat500.png-f96cc232d9ef588f219dc2b2c94b0438.ctex"
+path="res://.godot/imported/Cat500.png-877374ef16ff2b60dc6081e0e2724f11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Cat500.png"
-dest_files=["res://.godot/imported/Cat500.png-f96cc232d9ef588f219dc2b2c94b0438.ctex"]
+source_file="res://Images/Cat500.png"
+dest_files=["res://.godot/imported/Cat500.png-877374ef16ff2b60dc6081e0e2724f11.ctex"]
 
 [params]
 
