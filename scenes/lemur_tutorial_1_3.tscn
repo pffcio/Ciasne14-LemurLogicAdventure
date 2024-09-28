@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0iptiy0spl24" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="2_uf2hr"]
 [ext_resource type="Texture2D" uid="uid://drckpgn7nny6g" path="res://Arts/aseprite/lemur/lemur_static.png" id="3_2dkgd"]
 
-[node name="Lemur Tutorial" type="Control"]
+[node name="Lemur Tutorial 1 3" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
