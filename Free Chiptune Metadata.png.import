@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://duqdf8n1eu0df"
-=======
-uid="uid://b8duovmos08ia"
->>>>>>> 85fb2600d8d06f3d5a358b15a07fef01f2a51908
-path="res://.godot/imported/tesla_tower.png-926d3358eeacf686183b3f25d56745a9.ctex"
+uid="uid://j6b53c2iu45q"
+path="res://.godot/imported/Free Chiptune Metadata.png-ed54bacf73195a30678cbfb7ba0a63a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/aseprite/towers/tesla_tower.png"
-dest_files=["res://.godot/imported/tesla_tower.png-926d3358eeacf686183b3f25d56745a9.ctex"]
+source_file="res://Free Chiptune Metadata.png"
+dest_files=["res://.godot/imported/Free Chiptune Metadata.png-ed54bacf73195a30678cbfb7ba0a63a0.ctex"]
 
 [params]
 

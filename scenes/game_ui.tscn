@@ -1,15 +1,23 @@
-[gd_scene load_steps=19 format=3 uid="uid://ejq3bisdpjwr"]
+[gd_scene load_steps=28 format=3 uid="uid://ejq3bisdpjwr"]
 
 [ext_resource type="Texture2D" uid="uid://dhk6hxdow5r48" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Default.svg" id="1_c26wg"]
+[ext_resource type="Script" path="res://scripts/game_ui_tower_defence.gd" id="1_u603c"]
 [ext_resource type="Texture2D" uid="uid://dnegmh1fkfnm5" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Logotype/NameBack.svg" id="3_8olry"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_tdk8f"]
 [ext_resource type="PackedScene" uid="uid://ciibw2u1qd6jc" path="res://scenes/crossbow_tower_button.tscn" id="4_ncwib"]
 [ext_resource type="Texture2D" uid="uid://k1vrp4dbodm7" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Pause/Hover.svg" id="5_sn4v5"]
 [ext_resource type="PackedScene" uid="uid://lyu450o3cifu" path="res://scenes/basic_tower_button.tscn" id="5_xdyks"]
 [ext_resource type="Texture2D" uid="uid://c7mnssn5v27db" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Pause/Default.svg" id="6_k5c0c"]
+[ext_resource type="PackedScene" uid="uid://uhlpvfijxh3p" path="res://scenes/crossbow_tower.tscn" id="6_r8vqd"]
 [ext_resource type="Texture2D" uid="uid://csxee5pg1ljo1" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Hover.svg" id="7_udq8u"]
+[ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="8_chd7x"]
 [ext_resource type="Texture2D" uid="uid://btpnjpe2y6dpf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Default.svg" id="8_e6s2d"]
 [ext_resource type="Texture2D" uid="uid://ubiw6ifbg12l" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Hover.svg" id="9_m4bq8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ls6yn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xwfog"]
+texture = ExtResource("5_sn4v5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_senwo"]
 texture = ExtResource("5_sn4v5")
@@ -22,11 +30,21 @@ texture = ExtResource("3_8olry")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anapn"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3urno"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hq7lt"]
+texture = ExtResource("7_udq8u")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cocbe"]
 texture = ExtResource("7_udq8u")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqa4q"]
 texture = ExtResource("8_e6s2d")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3dka"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lhr3e"]
+texture = ExtResource("9_m4bq8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pxt1i"]
 texture = ExtResource("9_m4bq8")
@@ -41,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u603c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -58,6 +77,8 @@ offset_left = 35.0
 offset_top = 25.0
 offset_right = 122.0
 offset_bottom = 112.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ls6yn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xwfog")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_senwo")
 theme_override_styles/normal = SubResource("StyleBoxTexture_gorku")
 
@@ -75,7 +96,8 @@ grow_vertical = 2
 rotation = 1.5708
 theme_override_styles/panel = SubResource("StyleBoxTexture_p4met")
 
-[node name="FlowContainer" type="FlowContainer" parent="CanvasLayer/Normal_UI"]
+[node name="FlowContainer" type="FlowContainer" parent="CanvasLayer/Normal_UI/Tower_panel"]
+top_level = true
 layout_mode = 0
 offset_left = 950.0
 offset_top = 37.0
@@ -85,11 +107,13 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
 vertical = true
 
-[node name="Crossbow_Tower_Button" parent="CanvasLayer/Normal_UI/FlowContainer" instance=ExtResource("4_ncwib")]
+[node name="Crossbow_Tower_Button" parent="CanvasLayer/Normal_UI/Tower_panel/FlowContainer" instance=ExtResource("4_ncwib")]
 layout_mode = 2
+tower_scene = ExtResource("6_r8vqd")
 
-[node name="Basic_Tower_Button" parent="CanvasLayer/Normal_UI/FlowContainer" instance=ExtResource("5_xdyks")]
+[node name="Basic_Tower_Button" parent="CanvasLayer/Normal_UI/Tower_panel/FlowContainer" instance=ExtResource("5_xdyks")]
 layout_mode = 2
+tower_scene = ExtResource("8_chd7x")
 
 [node name="Pause_menu" type="Control" parent="CanvasLayer"]
 visible = false
@@ -132,6 +156,8 @@ offset_left = 467.0
 offset_top = 342.0
 offset_right = 554.0
 offset_bottom = 429.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3urno")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq7lt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cocbe")
 theme_override_styles/normal = SubResource("StyleBoxTexture_wqa4q")
 
@@ -141,5 +167,11 @@ offset_left = 603.0
 offset_top = 342.0
 offset_right = 690.0
 offset_bottom = 429.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o3dka")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lhr3e")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
+
+[connection signal="pressed" from="CanvasLayer/Normal_UI/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause_menu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause_menu/Home" to="." method="_on_home_pressed"]

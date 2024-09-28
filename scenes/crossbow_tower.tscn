@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://uhlpvfijxh3p"]
+
+[ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="1_33634"]
+[ext_resource type="Texture2D" uid="uid://bh6h7daeg34yi" path="res://Arts/aseprite/towers/crossbow_tower/crossbow.png" id="2_lcoth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miveh"]
+atlas = ExtResource("2_lcoth")
+region = Rect2(0, 24, 64, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdhc7"]
+atlas = ExtResource("2_lcoth")
+region = Rect2(64, 24, 64, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f68q"]
+atlas = ExtResource("2_lcoth")
+region = Rect2(128, 24, 64, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtko3"]
+atlas = ExtResource("2_lcoth")
+region = Rect2(192, 24, 64, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhprd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miveh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdhc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f68q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtko3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqfds"]
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
+[node name="CrossbowTower" type="Node2D"]
+
+[node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite", "ammo_point") instance=ExtResource("1_33634")]
+animated_sprite = NodePath("AnimatedSprite2D")
+do_rotation = true
+ammo_point = NodePath("Marker2D")
+ammo_timeout_in_seconds = 0.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tower"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qhprd")
+frame = 2
+frame_progress = 0.814577
+
+[node name="Marker2D" type="Marker2D" parent="Tower"]
+position = Vector2(1, -9)
+
+[node name="Area" type="Panel" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vqfds")

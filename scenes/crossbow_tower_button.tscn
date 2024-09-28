@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ciibw2u1qd6jc"]
+[gd_scene load_steps=4 format=3 uid="uid://ciibw2u1qd6jc"]
 
 [ext_resource type="Script" path="res://scripts/tower_button.gd" id="1_dspti"]
 [ext_resource type="Texture2D" uid="uid://cc3qytvpsmcd3" path="res://Arts/aseprite/menu_ui/crossbow.png" id="1_l6oo0"]
+[ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="2_mjtst"]
 
 [node name="Crossbow_Tower_Button" type="Panel"]
 custom_minimum_size = Vector2(64, 64)
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_dspti")
+tower_scene = ExtResource("2_mjtst")
 tower_type = "Crossbow"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

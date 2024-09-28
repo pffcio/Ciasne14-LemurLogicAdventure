@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://vaucexh0elmk"
+=======
+uid="uid://dbx6o45te6046"
+>>>>>>> 85fb2600d8d06f3d5a358b15a07fef01f2a51908
 path="res://.godot/imported/penguin4.png-5c6ef55b2b2d1da4d907e0c864c187ca.ctex"
 metadata={
 "vram_texture": false
