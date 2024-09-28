@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://cd1tn3mn1twu0"]
+
+[ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_6rof4"]
+[ext_resource type="Texture2D" uid="uid://k7ovxq5oubcj" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Background/Vector/Forest.svg" id="1_bhok8"]
+[ext_resource type="Texture2D" uid="uid://dohawxjhakiwm" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Default-1.svg" id="2_yaxy4"]
+[ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_tdk8f"]
+[ext_resource type="Texture2D" uid="uid://8ucsyo2iqyj0" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Hover.svg" id="4_iyxek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43ny6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yl4bw"]
+texture = ExtResource("4_iyxek")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uyvxc"]
+texture = ExtResource("2_yaxy4")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08w1i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pl458"]
+texture = ExtResource("4_iyxek")
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6rof4")
+
+[node name="Forest" type="Sprite2D" parent="."]
+position = Vector2(583, 321)
+texture = ExtResource("1_bhok8")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -46.0
+offset_right = 102.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_tdk8f")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_43ny6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yl4bw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uyvxc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uyvxc")
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = 94.0
+offset_right = 102.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_tdk8f")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_08w1i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pl458")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uyvxc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uyvxc")
+text = "Quit"
