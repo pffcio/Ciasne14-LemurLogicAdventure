@@ -36,7 +36,6 @@ expand_mode = 5
 stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -55,7 +54,6 @@ expand_mode = 5
 stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Dialog" type="Label" parent="HBoxContainer/VBoxContainer"]
@@ -68,29 +66,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="FromStart" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/FromStart"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Rewind" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="PausePlay" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Next" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Finish" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
