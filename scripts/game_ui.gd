@@ -76,4 +76,3 @@ func play_sound(index: int) -> void:
 func _on_audio_finished():
 	await get_tree().create_timer(0.5).timeout
 	proceed_with_tutorial()
-	
