@@ -22,8 +22,10 @@ corner_radius_bottom_left = 450
 
 [node name="BasicTower" type="Node2D"]
 
-[node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("1_ix7bb")]
+[node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite", "ammo_point") instance=ExtResource("1_ix7bb")]
 animated_sprite = NodePath("AnimatedSprite2D")
+ammo_point = NodePath("Marker2D")
+ammo_timeout_in_seconds = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tower"]
 sprite_frames = SubResource("SpriteFrames_l8g1x")
@@ -34,3 +36,5 @@ offset_top = -100.0
 offset_right = 100.0
 offset_bottom = 100.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0g")
+
+[node name="Marker2D" type="Marker2D" parent="Tower"]

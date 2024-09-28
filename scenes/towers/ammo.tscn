@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxjq416fys81d"]
+
+[ext_resource type="Script" path="res://scripts/ammo.gd" id="1_ot42a"]
+[ext_resource type="Texture2D" uid="uid://32b3g5p5gn8i" path="res://Arts/aseprite/towers/crossbow_tower/belt.png" id="2_gj6ai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ll684"]
+size = Vector2(4, 17.5)
+
+[node name="Ammo" type="Area2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ot42a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_gj6ai")
+offset = Vector2(-0.5, 16)
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ll684")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

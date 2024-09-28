@@ -47,14 +47,20 @@ corner_radius_bottom_left = 450
 
 [node name="CrossbowTower" type="Node2D"]
 
-[node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("1_33634")]
+[node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite", "ammo_point") instance=ExtResource("1_33634")]
 animated_sprite = NodePath("AnimatedSprite2D")
+do_rotation = true
+ammo_point = NodePath("Marker2D")
+ammo_timeout_in_seconds = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tower"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_qhprd")
 frame = 2
 frame_progress = 0.814577
+
+[node name="Marker2D" type="Marker2D" parent="Tower"]
+position = Vector2(1, -9)
 
 [node name="Area" type="Panel" parent="."]
 offset_left = -100.0
