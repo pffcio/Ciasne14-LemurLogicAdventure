@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck6y0rjnvp1av"
-path="res://.godot/imported/House500.png-792f86cc406c6edc53a77fe52fd3f0a0.ctex"
+uid="uid://cc3qytvpsmcd3"
+path="res://.godot/imported/crossbow.png-0f8f3af0080504b53eedc6bb4884e959.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/House500.png"
-dest_files=["res://.godot/imported/House500.png-792f86cc406c6edc53a77fe52fd3f0a0.ctex"]
+source_file="res://Arts/aseprite/menu_ui/crossbow.png"
+dest_files=["res://.godot/imported/crossbow.png-0f8f3af0080504b53eedc6bb4884e959.ctex"]
 
 [params]
 

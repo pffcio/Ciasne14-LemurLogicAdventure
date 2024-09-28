@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck6y0rjnvp1av"
-path="res://.godot/imported/House500.png-792f86cc406c6edc53a77fe52fd3f0a0.ctex"
+uid="uid://dsdvqdyjrbu55"
+path="res://.godot/imported/rownowaznosc.png-53d9f5bea4acc081a10602d5abb1fefd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/House500.png"
-dest_files=["res://.godot/imported/House500.png-792f86cc406c6edc53a77fe52fd3f0a0.ctex"]
+source_file="res://Arts/aseprite/towers/rownowaznosc.png"
+dest_files=["res://.godot/imported/rownowaznosc.png-53d9f5bea4acc081a10602d5abb1fefd.ctex"]
 
 [params]
 
