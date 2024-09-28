@@ -36,7 +36,7 @@ func _process(delta):
 	elif current_enemy != null:
 		if do_rotation:
 			animated_sprite.look_at(current_enemy.global_position)
-			animated_sprite.rotation_degrees += 90
+			animated_sprite.rotation_degrees -= 90
 		if timer.is_stopped():
 			timer.start()
 		

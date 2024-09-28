@@ -25,11 +25,6 @@ texture = ExtResource("5_sn4v5")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gorku"]
 texture = ExtResource("6_k5c0c")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4met"]
-texture = ExtResource("3_8olry")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anapn"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3urno"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hq7lt"]
@@ -40,6 +35,11 @@ texture = ExtResource("7_udq8u")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqa4q"]
 texture = ExtResource("8_e6s2d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4met"]
+texture = ExtResource("3_8olry")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anapn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3dka"]
 
@@ -81,6 +81,17 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ls6yn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xwfog")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_senwo")
 theme_override_styles/normal = SubResource("StyleBoxTexture_gorku")
+
+[node name="Play" type="Button" parent="CanvasLayer/Normal_UI"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 24.0
+offset_right = 235.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3urno")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq7lt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cocbe")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wqa4q")
 
 [node name="Tower_panel" type="Panel" parent="CanvasLayer/Normal_UI"]
 layout_mode = 1
@@ -173,5 +184,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
 
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Home" to="." method="_on_home_pressed"]

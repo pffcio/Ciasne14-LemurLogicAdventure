@@ -19,17 +19,19 @@ func _process(delta):
 func _on_pause_pressed():
 	get_tree().paused = true
 	tower_panel.hide()
-	pause_button.hide()
 	pause_panel.show()
 
 
 func _on_resume_pressed():
 	get_tree().paused = false
 	tower_panel.show()
-	pause_button.show()
 	pause_panel.hide()
 
 
 func _on_home_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(main_menu)
+
+
+func _on_play_pressed():
+	get_parent().start()

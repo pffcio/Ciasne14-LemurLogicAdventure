@@ -63,6 +63,7 @@ frame_progress = 0.814577
 position = Vector2(1, -9)
 
 [node name="Area" type="Panel" parent="."]
+visible = false
 offset_left = -100.0
 offset_top = -100.0
 offset_right = 100.0

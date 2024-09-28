@@ -30,11 +30,12 @@ ammo_timeout_in_seconds = 0.5
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tower"]
 sprite_frames = SubResource("SpriteFrames_l8g1x")
 
+[node name="Marker2D" type="Marker2D" parent="Tower"]
+
 [node name="Area" type="Panel" parent="."]
+visible = false
 offset_left = -100.0
 offset_top = -100.0
 offset_right = 100.0
 offset_bottom = 100.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0g")
-
-[node name="Marker2D" type="Marker2D" parent="Tower"]

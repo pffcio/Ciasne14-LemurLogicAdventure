@@ -23,7 +23,7 @@ func _on_gui_input(event):
 	elif event is InputEventMouseMotion && event.button_mask == 1:
 		if get_child_count() > 1:
 			get_child(1).global_position = event.global_position
-			
+			get_child(1).get_node("Area").show()
 			if is_on_path:
 				get_child(1).get_node("Area").modulate = Color(255, 0, 0, 0.2)
 			else:
