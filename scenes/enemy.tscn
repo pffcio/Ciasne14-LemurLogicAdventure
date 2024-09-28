@@ -1,8 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://is5ms33rksvh"]
+[gd_scene load_steps=11 format=3 uid="uid://is5ms33rksvh"]
 
 [ext_resource type="Script" path="res://scripts/path_follow_enemy.gd" id="1_btn1h"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qaoq2"]
-[ext_resource type="Texture2D" uid="uid://cvwx7c2thyfuf" path="res://images/baloon.png" id="2_2h1ok"]
+[ext_resource type="Texture2D" uid="uid://cr1qtgy6no3a4" path="res://Arts/aseprite/enemies/penguin1.png" id="3_tkaq5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8juv5"]
+atlas = ExtResource("3_tkaq5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a74ve"]
+atlas = ExtResource("3_tkaq5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jpti"]
+atlas = ExtResource("3_tkaq5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqmq1"]
+atlas = ExtResource("3_tkaq5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk01a"]
+atlas = ExtResource("3_tkaq5")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1xbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8juv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a74ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jpti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqmq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk01a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7ia4"]
 radius = 112.0
@@ -16,8 +59,10 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_qaoq2")
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-texture = ExtResource("2_2h1ok")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Enemy"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_f1xbh")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 position = Vector2(-5, -22)

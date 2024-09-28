@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjdxrp6tq42pq"]
 
 [ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="1_ix7bb"]
-[ext_resource type="Texture2D" uid="uid://b8duovmos08ia" path="res://Arts/aseprite/towers/tesla_tower.png" id="2_sdoaw"]
+[ext_resource type="Texture2D" uid="uid://cfkb4m74ys1b" path="res://Arts/aseprite/towers/tesla_tower.png" id="2_sdoaw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l8g1x"]
 animations = [{
