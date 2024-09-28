@@ -53,6 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Pause" type="Button" parent="CanvasLayer/Normal_UI"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 25.0
 offset_right = 122.0

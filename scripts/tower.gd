@@ -2,12 +2,14 @@ extends Node2D
 
 class_name Tower
 
+@export var tower_sprite: Texture2D
 var enemy_in_range_list = []
 var current_enemy: Enemy = null
+@onready var sprite = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	sprite.texture = tower_sprite
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
