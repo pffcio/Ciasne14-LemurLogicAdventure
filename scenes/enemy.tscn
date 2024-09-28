@@ -12,6 +12,8 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("1_btn1h")
 
 [node name="Enemy" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_qaoq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]

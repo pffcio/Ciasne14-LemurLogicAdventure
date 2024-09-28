@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://hncubbsjhedo"]
+[gd_scene load_steps=15 format=4 uid="uid://hncubbsjhedo"]
 
 [ext_resource type="Script" path="res://scripts/levels/level1.gd" id="1_fbolq"]
 [ext_resource type="Texture2D" uid="uid://crnn4g3mk04so" path="res://Arts/Texture/TX Tileset Grass.png" id="2_knxkw"]
 [ext_resource type="TileSet" uid="uid://b2p5hvauxto84" path="res://tile_sets/trees.tres" id="3_2pfyu"]
 [ext_resource type="TileSet" uid="uid://dttj2xfhc71fv" path="res://tile_sets/path.tres" id="4_faac7"]
+[ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="5_gsyio"]
+[ext_resource type="Texture2D" uid="uid://bh6h7daeg34yi" path="res://Arts/aseprite/towers/crossbow_tower/crossbow.png" id="6_ev2fp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eja6y"]
 texture = ExtResource("2_knxkw")
@@ -273,6 +275,42 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr27w"]
+atlas = ExtResource("6_ev2fp")
+region = Rect2(0, 24, 64, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_030je"]
+atlas = ExtResource("6_ev2fp")
+region = Rect2(64, 24, 64, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vj3c"]
+atlas = ExtResource("6_ev2fp")
+region = Rect2(128, 24, 64, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fwgq"]
+atlas = ExtResource("6_ev2fp")
+region = Rect2(192, 24, 64, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64tvo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr27w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_030je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vj3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fwgq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_fbolq")
 elements = 5
@@ -293,3 +331,17 @@ tile_set = ExtResource("4_faac7")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_8gsro")
+
+[node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("5_gsyio")]
+position = Vector2(218, 350)
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tower"]
+rotation = -0.15708
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_64tvo")
+frame = 1
+frame_progress = 0.329675
+
+[node name="Marker2D" type="Marker2D" parent="Tower"]
+position = Vector2(0, 6)

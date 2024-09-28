@@ -2,14 +2,14 @@ extends Node2D
 
 class_name Tower
 
-@export var tower_sprite: Texture2D
-var enemy_in_range_list = []
+@export var animated_sprite: AnimatedSprite2D
+var enemy_in_range_list: Array[Enemy] = []
 var current_enemy: Enemy = null
 @onready var sprite = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sprite.texture = tower_sprite
+	add_child(animated_sprite)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,22 +18,24 @@ func _process(delta):
 		return
 	
 	elif current_enemy != null && len(enemy_in_range_list) == 0:
+		animated_sprite.stop()
 		current_enemy = null
 		
 	elif current_enemy != null:
-		_attack()
+		_attack(current_enemy)
 		
 	else:
 		_assign_curr_enemy()
+		animated_sprite.play()
 	
 
 
-func _on_range_area_entered(area):
-	if area.class is Enemy:
+func _on_range_area_entered(area: Node2D):
+	if is_instance_of(area, Enemy):
 		enemy_in_range_list.append(area)
 
 
-func _on_range_area_exited(area):
+func _on_range_area_exited(area: Node2D):
 	if area in enemy_in_range_list:
 		enemy_in_range_list.erase(area)
 
@@ -47,6 +49,5 @@ func _assign_curr_enemy():
 	current_enemy = enemy_in_range_list[0]
 
 
-func _attack():
-	# TODO implement attack
-	pass
+func _attack(enemy: Enemy):
+	animated_sprite.look_at(enemy.global_position)
