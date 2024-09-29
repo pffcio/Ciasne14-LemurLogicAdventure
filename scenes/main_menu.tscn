@@ -1,6 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cufy2flt1qkde"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_s2nlu"]
+[ext_resource type="PackedScene" uid="uid://d4grrwcf73ok4" path="res://scenes/levels/test_level.tscn" id="2_g054c"]
 [ext_resource type="Texture2D" uid="uid://k7ovxq5oubcj" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Background/Vector/Forest.svg" id="2_n8gng"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_m4k4n"]
 [ext_resource type="Texture2D" uid="uid://8ucsyo2iqyj0" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Hover.svg" id="4_bf83e"]
@@ -40,6 +41,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s2nlu")
+<<<<<<< HEAD
+=======
+first_level = ExtResource("2_g054c")
+>>>>>>> d67197676a44a28c5afb004042736a1b56f225a7
 
 [node name="Forest" type="Sprite2D" parent="."]
 position = Vector2(583, 321)
@@ -123,7 +128,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_08w1i")
 theme_override_styles/hover = SubResource("StyleBoxTexture_pl458")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uyvxc")
 theme_override_styles/normal = SubResource("StyleBoxTexture_uyvxc")
-text = "Quit"
+text = "Wyjście"
 
 [node name="Choose level" type="Control" parent="."]
 visible = false
@@ -154,7 +159,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
 theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
-text = "Intro"
+text = "Podstawy"
 
 [node name="Through game" type="Button" parent="Choose level"]
 layout_mode = 0
@@ -172,7 +177,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
 theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
-text = "Game"
+text = "Rozszerzenie"
 
 [node name="Back" type="Button" parent="Choose level"]
 layout_mode = 0
@@ -190,7 +195,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
 theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
-text = "Back"
+text = "Powrót"
 
 [node name="Gratification" type="Control" parent="."]
 visible = false
@@ -290,12 +295,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
 theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
-text = "Back"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Gratification"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+text = "Powrót"
 
 [connection signal="pressed" from="Start2/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Start2/Gratification" to="." method="_on_gratification_pressed"]

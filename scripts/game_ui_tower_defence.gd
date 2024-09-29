@@ -3,13 +3,17 @@ extends Control
 
 @onready var pause_panel = $CanvasLayer/Pause_menu
 @onready var pause_button = $CanvasLayer/Normal_UI/Pause
+@onready var play_button = $CanvasLayer/Normal_UI/Play
 @onready var tower_panel = $CanvasLayer/Normal_UI/Tower_panel
 @onready var main_menu = preload("res://scenes/main_menu.tscn")
 @onready var puzzle_texture = $CanvasLayer/Normal_UI/Panel/Puzzle/TextureRect
 @onready var puzzle_text = $CanvasLayer/Normal_UI/Panel/Puzzle/TextEdit
 
+<<<<<<< HEAD
 var last_puzzle: int = -1
 
+=======
+>>>>>>> d67197676a44a28c5afb004042736a1b56f225a7
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	GameController.random_question.connect(_on_random_question)
@@ -49,7 +53,13 @@ func _on_home_pressed():
 func _on_play_pressed():
 	GameController.is_paused.emit(false)
 	get_parent().start()
+<<<<<<< HEAD
 
 
 func _on_random_question():
 	pass
+=======
+	
+func set_play_disabled(disabled: bool):
+	play_button.disabled = disabled
+>>>>>>> d67197676a44a28c5afb004042736a1b56f225a7

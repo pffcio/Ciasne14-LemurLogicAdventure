@@ -6,7 +6,8 @@ class_name Enemy
 func hit(demage: int):
 	health -= demage
 	if health <= 0:
-		queue_free()
+		get_parent().get_parent().get_parent().enemy_died.emit()
+		get_parent().queue_free()
 
 func path_finished():
 	get_parent().get_parent().get_parent().enemy_finished.emit(self)

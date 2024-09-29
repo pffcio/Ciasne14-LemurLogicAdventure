@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e56oveyc683e"
-path="res://.godot/imported/Sun500.png-b67065f1510773d3ccd153ec9186aced.ctex"
+uid="uid://ctcuspcdkaddh"
+path="res://.godot/imported/line.png-5ac59d4352fdafc7e04d5d470f99b3c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Sun500.png"
-dest_files=["res://.godot/imported/Sun500.png-b67065f1510773d3ccd153ec9186aced.ctex"]
+source_file="res://scenes/Intro/line.png"
+dest_files=["res://.godot/imported/line.png-5ac59d4352fdafc7e04d5d470f99b3c2.ctex"]
 
 [params]
 

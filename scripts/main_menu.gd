@@ -6,7 +6,8 @@ extends Control
 
 func _ready():
 	GameController.is_main_menu.emit(true)
-
+	var exe_path = "res://scenes/Intro/Intro.exe" # Replace with the actual path to your .exe
+	OS.execute(exe_path, []) 
 
 func _on_start_pressed():
 	$Start2.hide()
