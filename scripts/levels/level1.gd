@@ -62,6 +62,7 @@ func _on_timeout() -> void:
 	GameController.is_prepare_val = true
 
 func _on_enemy_finished(enemy: Enemy):
+	## TODO check hearts and if player dies
 	var childs = hearts.get_children()
 	if childs.size() > 0:
 		childs.back().queue_free()

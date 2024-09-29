@@ -139,9 +139,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 454.0
-offset_top = 183.0
+offset_top = 113.0
 offset_right = 658.0
-offset_bottom = 275.0
+offset_bottom = 205.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
@@ -159,9 +159,9 @@ text = "Intro"
 [node name="Through game" type="Button" parent="Choose level"]
 layout_mode = 0
 offset_left = 474.0
-offset_top = 343.0
+offset_top = 273.0
 offset_right = 678.0
-offset_bottom = 435.0
+offset_bottom = 365.0
 theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
 theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
 theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
@@ -177,9 +177,9 @@ text = "Game"
 [node name="Back" type="Button" parent="Choose level"]
 layout_mode = 0
 offset_left = 474.0
-offset_top = 483.0
+offset_top = 413.0
 offset_right = 678.0
-offset_bottom = 575.0
+offset_bottom = 505.0
 theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
 theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
 theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
@@ -275,6 +275,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
 text = "Zablokowane"
 
 [node name="Back" type="Button" parent="Gratification"]
+layout_mode = 0
 offset_left = 474.0
 offset_top = 483.0
 offset_right = 678.0

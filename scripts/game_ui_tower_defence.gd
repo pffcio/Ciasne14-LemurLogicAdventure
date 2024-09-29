@@ -5,10 +5,14 @@ extends Control
 @onready var pause_button = $CanvasLayer/Normal_UI/Pause
 @onready var tower_panel = $CanvasLayer/Normal_UI/Tower_panel
 @onready var main_menu = preload("res://scenes/main_menu.tscn")
+@onready var puzzle_texture = $CanvasLayer/Normal_UI/Panel/Puzzle/TextureRect
+@onready var puzzle_text = $CanvasLayer/Normal_UI/Panel/Puzzle/TextEdit
 
+var last_puzzle: int = -1
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	GameController.random_question.connect(_on_random_question)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,3 +49,7 @@ func _on_home_pressed():
 func _on_play_pressed():
 	GameController.is_paused.emit(false)
 	get_parent().start()
+
+
+func _on_random_question():
+	pass

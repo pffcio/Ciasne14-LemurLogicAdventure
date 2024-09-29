@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ciibw2u1qd6jc"]
+[gd_scene load_steps=7 format=3 uid="uid://ciibw2u1qd6jc"]
 
 [ext_resource type="Script" path="res://scripts/tower_button.gd" id="1_dspti"]
 [ext_resource type="Texture2D" uid="uid://cc3qytvpsmcd3" path="res://Arts/aseprite/menu_ui/crossbow.png" id="1_l6oo0"]
 [ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="2_mjtst"]
+[ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="4_y5taw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxfbm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ye4dm"]
 
 [node name="Crossbow_Tower_Button" type="Panel"]
 custom_minimum_size = Vector2(64, 64)
@@ -16,5 +21,16 @@ tower_type = "Crossbow"
 scale = Vector2(2, 2)
 texture = ExtResource("1_l6oo0")
 offset = Vector2(16, 16)
+
+[node name="Description" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_right = 260.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("4_y5taw")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wxfbm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ye4dm")
+text = "To jest kot"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

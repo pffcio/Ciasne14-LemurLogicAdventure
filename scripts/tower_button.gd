@@ -21,16 +21,16 @@ func _on_gui_input(event):
 		add_child(tempTower)
 		tempTower.process_mode = Node.PROCESS_MODE_DISABLED
 	elif event is InputEventMouseMotion && event.button_mask == 1:
-		if get_child_count() > 1:
-			get_child(1).global_position = event.global_position
-			get_child(1).get_node("Area").show()
+		if get_child_count() > 2:
+			get_child(2).global_position = event.global_position
+			get_child(2).get_node("Area").show()
 			if is_on_path:
-				get_child(1).get_node("Area").modulate = Color(255, 0, 0, 0.2)
+				get_child(2).get_node("Area").modulate = Color(255, 0, 0, 0.2)
 			else:
-				get_child(1).get_node("Area").modulate = Color(255, 255, 255, 0.2)
+				get_child(2).get_node("Area").modulate = Color(255, 255, 255, 0.2)
 	elif event is InputEventMouseButton && event.button_mask == 0:
-		if get_child_count() > 1:
-			get_child(1).queue_free()
+		if get_child_count() > 2:
+			get_child(2).queue_free()
 			
 		
 		if event.global_position.x < 900:
@@ -42,5 +42,5 @@ func _on_gui_input(event):
 				tempTower.get_node("Area").hide()
 				AudioPlayer.play_sfx("build_tower")
 	else:
-		if get_child_count() > 1:
-			get_child(1).queue_free()
+		if get_child_count() > 2:
+			get_child(2).queue_free()

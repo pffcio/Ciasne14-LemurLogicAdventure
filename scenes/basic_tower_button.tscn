@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://lyu450o3cifu"]
+[gd_scene load_steps=8 format=3 uid="uid://lyu450o3cifu"]
 
 [ext_resource type="Script" path="res://scripts/tower_button.gd" id="1_5pbyc"]
 [ext_resource type="Texture2D" uid="uid://cqfb20klar6u6" path="res://Arts/aseprite/menu_ui/tower.png" id="2_fo0po"]
 [ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="2_vb0sw"]
+[ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="4_x6sx2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ff62"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2d23l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ptf58"]
 
 [node name="Basic_Tower_Button" type="Panel"]
 custom_minimum_size = Vector2(64, 64)
@@ -16,5 +23,16 @@ tower_type = "Basic"
 scale = Vector2(2, 2)
 texture = ExtResource("2_fo0po")
 offset = Vector2(16, 16)
+
+[node name="Description" type="TextEdit" parent="."]
+offset_left = 72.0
+offset_right = 260.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("4_x6sx2")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ff62")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2d23l")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ptf58")
+text = "To jest kot"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

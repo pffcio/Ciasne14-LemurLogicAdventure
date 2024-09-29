@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ejq3bisdpjwr"]
+[gd_scene load_steps=35 format=3 uid="uid://ejq3bisdpjwr"]
 
 [ext_resource type="Texture2D" uid="uid://dhk6hxdow5r48" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Default.svg" id="1_c26wg"]
 [ext_resource type="Script" path="res://scripts/game_ui_tower_defence.gd" id="1_u603c"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://btpnjpe2y6dpf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Default.svg" id="8_e6s2d"]
 [ext_resource type="Texture2D" uid="uid://ubiw6ifbg12l" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Hover.svg" id="9_m4bq8"]
 [ext_resource type="PackedScene" uid="uid://b058ef8dsd0v4" path="res://scenes/tesla_tower_button.tscn" id="11_yxaeg"]
+[ext_resource type="Texture2D" uid="uid://ebr4puhiavlp" path="res://Arts/aseprite/menu_ui/stop_sign.png" id="12_ekm25"]
+[ext_resource type="Texture2D" uid="uid://bxlswpro8fein" path="res://icon.svg" id="14_rgou3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ls6yn"]
 
@@ -39,6 +41,8 @@ texture = ExtResource("8_e6s2d")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4met"]
 texture = ExtResource("3_8olry")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvr1x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnfbl"]
 
@@ -122,7 +126,8 @@ offset_top = 62.0
 offset_right = 1110.0
 offset_bottom = 607.0
 theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 20
+theme_override_constants/v_separation = 50
+alignment = 1
 vertical = true
 
 [node name="Crossbow_Tower_Button" parent="CanvasLayer/Normal_UI/Tower_panel/FlowContainer" instance=ExtResource("4_ncwib")]
@@ -162,13 +167,18 @@ offset_right = 1110.0
 offset_bottom = 607.0
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
+alignment = 1
+last_wrap_alignment = 2
 vertical = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Normal_UI/Tower_panel2/FlowContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xvr1x")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Normal_UI/Tower_panel2/FlowContainer/Panel"]
+position = Vector2(32, 32)
+texture = ExtResource("12_ekm25")
 
 [node name="Score" type="TextEdit" parent="CanvasLayer/Normal_UI"]
 layout_mode = 1
@@ -187,6 +197,29 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_pnfbl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_31ctp")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_gjxfp")
 text = "Score:"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Normal_UI"]
+layout_mode = 0
+offset_top = 449.0
+offset_right = 898.0
+offset_bottom = 652.0
+
+[node name="Puzzle" type="FlowContainer" parent="CanvasLayer/Normal_UI/Panel"]
+layout_mode = 0
+offset_right = 910.0
+offset_bottom = 196.0
+last_wrap_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Normal_UI/Panel/Puzzle"]
+layout_mode = 2
+texture = ExtResource("14_rgou3")
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Normal_UI/Panel/Puzzle"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "TEST 1232321312
+"
 
 [node name="Pause_menu" type="Control" parent="CanvasLayer"]
 visible = false
