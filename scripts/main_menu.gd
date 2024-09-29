@@ -23,3 +23,15 @@ func _on_through_game_pressed():
 func _on_back_pressed():
 	$Start2.show()
 	$"Choose level".hide()
+	$Gratification.hide()
+
+
+func _on_gratification_pressed():
+	$Start2.hide()
+	$Gratification.show()
+	check_for_rewards()
+
+func check_for_rewards():
+	if (GameController.correct_answers_true_false + GameController.correct_answers_connectors > 3):
+			$Gratification/Prize1.text = "Wycieczka do ZOO"
+			$Gratification/Prize2.text = "Wycieczka do Energylandii"

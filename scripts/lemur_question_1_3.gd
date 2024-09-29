@@ -9,7 +9,7 @@ var question4: Array = ["res://Images/House500.png", "Wskaż prawdziwe zdanie", 
 var question5: Array = ["res://Images/Dog500.png", "Wskaż nie-prawdziwe zdanie", "To jest pies","To nie jest pies","Ten pies ma obrożę","To nie jest dom", 3]
 var question6: Array = ["res://Images/Dog500.png", "Wskaż prawdziwe zdanie", "To jest kot","To jest lemur","To jest pies","To jest dom", 4]
 var question7: Array = ["res://Images/Sun500.png", "Wskaż nie-prawdziwe zdanie", "Słońce jest uśmiechnięte","To jest pies","To jest Słońce","To nie jest lemur", 3]
-var question8: Array = ["res://Images/Sun500.png", "Wskaż prawdziwe zdanie", "To jest Słońce","Pada deszcz","To jest lemur","To jest dom", 3]
+var question8: Array = ["res://Images/Sun500.png", "Wskaż prawdziwe zdanie", "To jest Słońce","Pada deszcz","To jest lemur","To jest dom", 2]
 var question9: Array = ["res://Images/TeddyBear500.png", "Wskaż nie-prawdziwe zdanie", "To jest pluszowy miś","Miś ma kokardkę","To jest dom","To nie jest dom", 4]
 var question10: Array = ["res://Images/TeddyBear500.png", "Wskaż prawdziwe zdanie", "To jest kot","To jest pies","To jest pluszowy miś","To jest dom", 4]
 
