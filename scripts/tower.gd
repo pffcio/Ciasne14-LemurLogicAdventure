@@ -6,6 +6,7 @@ class_name Tower
 @export var do_rotation: bool = false
 @export var ammo_point: Marker2D
 @export var ammo_timeout_in_seconds: float
+@export var is_shooting = false
 var enemy_in_range_list: Array[Enemy] = []
 var current_enemy: Enemy = null
 @onready var sprite = $Sprite2D
@@ -69,10 +70,12 @@ func _attack():
 	if current_enemy == null:
 		animated_sprite.stop()
 		timer.stop()
+		is_shooting = false
 		return
 	
 	var ammo_instance = ammo.instantiate()
 	ammo_point.look_at(current_enemy.global_position)
 	ammo_point.add_child(ammo_instance)
+	is_shooting = true
 	
 	

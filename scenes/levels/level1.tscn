@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://hncubbsjhedo"]
+[gd_scene load_steps=11 format=4 uid="uid://hncubbsjhedo"]
 
 [ext_resource type="Script" path="res://scripts/levels/level1.gd" id="1_fbolq"]
 [ext_resource type="Texture2D" uid="uid://crnn4g3mk04so" path="res://Arts/Texture/TX Tileset Grass.png" id="2_knxkw"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://dttj2xfhc71fv" path="res://tile_sets/path.tres" id="4_faac7"]
 [ext_resource type="PackedScene" uid="uid://uhlpvfijxh3p" path="res://scenes/crossbow_tower.tscn" id="5_tdghd"]
 [ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="6_ni2tf"]
+[ext_resource type="PackedScene" uid="uid://pqq2acdvk6xu" path="res://scenes/logic_p_plate.tscn" id="7_f72cj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eja6y"]
 texture = ExtResource("2_knxkw")
@@ -297,7 +298,10 @@ tile_set = ExtResource("4_faac7")
 curve = SubResource("Curve2D_8gsro")
 
 [node name="CrossbowTower" parent="." instance=ExtResource("5_tdghd")]
-position = Vector2(193, 343)
+position = Vector2(195, 193)
 
 [node name="CrossbowTower2" parent="." instance=ExtResource("6_ni2tf")]
-position = Vector2(398, 342)
+position = Vector2(322, 185)
+
+[node name="LogicPPlate" parent="." instance=ExtResource("7_f72cj")]
+position = Vector2(261, 186)
