@@ -53,13 +53,13 @@ radius = 112.0
 [node name="PathFollow2D" type="PathFollow2D"]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_3yo1w")
-speed = 120
+speed = 130
 
 [node name="Enemy" type="CharacterBody2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_f1l7m")
-health = 30
+health = 40
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Enemy"]
 scale = Vector2(5, 5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://xbk1rbyipy0p"]
+[gd_scene load_steps=33 format=3 uid="uid://dbtdi24yv4lyg"]
 
 [ext_resource type="Texture2D" uid="uid://dhk6hxdow5r48" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Default.svg" id="1_c26wg"]
 [ext_resource type="Script" path="res://scripts/game_ui_tower_defence.gd" id="1_u603c"]
@@ -47,12 +47,6 @@ texture = ExtResource("8_e6s2d")
 texture = ExtResource("3_8olry")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvr1x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnfbl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ctp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjxfp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anapn"]
 
@@ -187,46 +181,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_xvr1x")
 position = Vector2(32, 32)
 texture = ExtResource("12_ekm25")
 
-[node name="Score" type="TextEdit" parent="CanvasLayer/Normal_UI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -285.0
-offset_top = 42.0
-offset_right = -63.0
-offset_bottom = 99.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
-theme_override_fonts/font = ExtResource("3_tdk8f")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxEmpty_pnfbl")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_31ctp")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_gjxfp")
-text = "Score:"
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Normal_UI"]
-layout_mode = 0
-offset_top = 449.0
-offset_right = 898.0
-offset_bottom = 652.0
-
-[node name="Puzzle" type="FlowContainer" parent="CanvasLayer/Normal_UI/Panel"]
-layout_mode = 0
-offset_right = 910.0
-offset_bottom = 196.0
-last_wrap_alignment = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Normal_UI/Panel/Puzzle"]
-layout_mode = 2
-
-[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Normal_UI/Panel/Puzzle"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "TEST 1232321312
-"
-
 [node name="Pause_menu" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
@@ -310,16 +264,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -198.0
-offset_top = -95.0
-offset_right = 228.0
-offset_bottom = 49.0
+offset_left = -271.0
+offset_top = -96.0
+offset_right = 339.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_tdk8f")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_anapn")
-text = "Next Level"
+text = "Następny Level"
 
 [node name="NextLevel" type="Button" parent="CanvasLayer/Next_level"]
 layout_mode = 0
@@ -332,9 +286,57 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_hq7lt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cocbe")
 theme_override_styles/normal = SubResource("StyleBoxTexture_wqa4q")
 
+[node name="Finish" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Finish"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Finish"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -96.0
+offset_right = 252.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_tdk8f")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_anapn")
+text = "Wygrałeś"
+
+[node name="Home2" type="Button" parent="CanvasLayer/Finish"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 340.0
+offset_right = 617.0
+offset_bottom = 427.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o3dka")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lhr3e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
+
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="CanvasLayer/Next_level/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="CanvasLayer/Finish/Home2" to="." method="_on_home_pressed"]

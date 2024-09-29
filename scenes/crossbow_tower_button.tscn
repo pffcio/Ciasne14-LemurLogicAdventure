@@ -31,6 +31,5 @@ theme_override_fonts/font = ExtResource("4_y5taw")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wxfbm")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ye4dm")
-text = "To jest kot"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

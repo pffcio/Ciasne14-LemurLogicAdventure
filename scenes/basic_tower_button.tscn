@@ -25,6 +25,7 @@ texture = ExtResource("2_fo0po")
 offset = Vector2(16, 16)
 
 [node name="Description" type="TextEdit" parent="."]
+layout_mode = 0
 offset_left = 72.0
 offset_right = 260.0
 offset_bottom = 64.0
@@ -33,6 +34,5 @@ theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1ff62")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2d23l")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_ptf58")
-text = "To jest kot"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

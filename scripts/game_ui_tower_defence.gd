@@ -6,12 +6,9 @@ extends Control
 @onready var play_button = $CanvasLayer/Normal_UI/Play
 @onready var tower_panel = $CanvasLayer/Normal_UI/Tower_panel
 @onready var main_menu = preload("res://scenes/main_menu.tscn")
-@onready var puzzle_texture = $CanvasLayer/Normal_UI/Panel/Puzzle/TextureRect
-@onready var puzzle_text = $CanvasLayer/Normal_UI/Panel/Puzzle/TextEdit
 
 signal next_level
 
-var last_puzzle: int = -1
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	GameController.random_question.connect(_on_random_question)
@@ -61,6 +58,9 @@ func set_play_disabled(disabled: bool):
 
 func show_next_level():
 	$CanvasLayer/Next_level.show()
+	
+func show_finished():
+	$CanvasLayer/Finish.show()
 
 func _on_next_level_pressed():
 	next_level.emit()

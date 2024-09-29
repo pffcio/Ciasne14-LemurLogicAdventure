@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0d1p8h4tnq1x" path="res://Arts/aseprite/menu_ui/tesla_tower.png" id="1_lisjn"]
 [ext_resource type="Script" path="res://scripts/tower_button.gd" id="1_ow5gl"]
-[ext_resource type="PackedScene" uid="uid://qg5xmvwjbgkr" path="res://scenes/tesla_tower.tscn" id="2_jjeqt"]
+[ext_resource type="PackedScene" uid="uid://4qkefjaib3g3" path="res://scenes/tesla_tower.tscn" id="2_jjeqt"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="4_cj3ix"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4acif"]
@@ -22,6 +22,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_lisjn")
 
 [node name="Description" type="TextEdit" parent="."]
+layout_mode = 0
 offset_left = 72.0
 offset_right = 260.0
 offset_bottom = 64.0
@@ -29,6 +30,5 @@ theme_override_fonts/font = ExtResource("4_cj3ix")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4acif")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_gsojh")
-text = "To jest kot"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

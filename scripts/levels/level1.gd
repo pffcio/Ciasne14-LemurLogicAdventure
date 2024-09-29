@@ -23,16 +23,16 @@ var enemies_per_iteration = {
 	1: {
 		1: [0,0,0,0],
 		2: [0,0,1,1,1,1],
-		3: [1,1,2,2,2,2,2,2],
-		4: [2,2,2,3,3,3,3,3],
-		5: [3,3,3,3,3,3,3,3]
+		3: [1,1,2,2,2,2,2,2,3,3,3],
+		4: [2,2,2,3,3,3,3,3,3,2,2,2],
+		5: [3,3,3,3,3,3,3,3,3,3,3,3,3]
 	},
 	2: {
 		1: [1,1,1,1,1],
-		2: [0,0,1,1,0,1],
-		3: [3,1,2,0,2,2,2,2],
-		4: [2,1,2,3,3,3,3,0],
-		5: [3,3,3,3,3,3,3,3,3]
+		2: [0,0,1,1,0,1,2,3],
+		3: [3,1,2,0,2,3,2,2,3],
+		4: [2,1,2,3,3,3,3,0,2,2,3],
+		5: [3,3,3,3,3,3,3,3,3,3,3,3,3]
 	}
 }
 
@@ -101,6 +101,9 @@ func _on_enemy_died():
 		GameController.is_prepare.emit(true)
 		GameController.is_wave_val = false
 		GameController.is_prepare_val = true
+	if level == 2 && iteration == 5 && path2d.get_child_count() == 1 && hearts.get_child_count() != 0 && timer.is_stopped():
+		game_ui.show_finished()
+		return
 	if iteration == 5 && path2d.get_child_count() == 1 && hearts.get_child_count() != 0 && timer.is_stopped():
 		game_ui.show_next_level()
 
