@@ -24,6 +24,7 @@ func _ready():
 	dialogSoundCollection.append(load("res://Sounds/Wrong.mp3"))
 	question_selected = get_random_question()
 	generate_question(question_selected)
+	audio_player.finished.connect(_on_audio_finished)
 	
 func generate_question(question):
 	$VBoxContainer/Image.texture = load(question[0])
@@ -53,9 +54,9 @@ func _on_a_4_pressed():
 func check_for_correct_answer(answer_text):
 	var q = question_selected[question_selected[6]]
 	if(answer_text == question_selected[question_selected[6]]):
-		print("Correct")
 		audio_player.stream = dialogSoundCollection[0]  # Set the stream to the sound from the list
 		audio_player.play()
+		GameController.correct_answers_true_false = GameController.correct_answers_true_false+1
 		$Particle.emitting = true
 		disable_all_buttons()
 	else:
@@ -69,3 +70,15 @@ func disable_all_buttons():
 	$VBoxContainer/Answers/A2.disabled = true
 	$VBoxContainer/Answers/A3.disabled = true
 	$VBoxContainer/Answers/A4.disabled = true
+
+func check_score():
+	var current_score = GameController.correct_answers_true_false
+	var max_score = GameController.max_correct_answers_true_false
+	if (current_score<max_score):
+		print("Correct")
+		get_tree().reload_current_scene()
+	if(current_score == max_score):
+		print("next scene")
+
+func _on_audio_finished():
+	check_score()
