@@ -1,7 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://uhlpvfijxh3p"]
+[gd_scene load_steps=10 format=3 uid="uid://uhlpvfijxh3p"]
 
 [ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="1_33634"]
 [ext_resource type="Texture2D" uid="uid://bh6h7daeg34yi" path="res://Arts/aseprite/towers/crossbow_tower/crossbow.png" id="2_lcoth"]
+[ext_resource type="Texture2D" uid="uid://s4c6p7cradsi" path="res://Arts/aseprite/towers/crossbow_tower/base.png" id="3_m7gjo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqfds"]
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_miveh"]
 atlas = ExtResource("2_lcoth")
@@ -39,13 +46,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqfds"]
-corner_radius_top_left = 450
-corner_radius_top_right = 450
-corner_radius_bottom_right = 450
-corner_radius_bottom_left = 450
-
 [node name="CrossbowTower" type="Node2D"]
+
+[node name="Area" type="Panel" parent="."]
+visible = false
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vqfds")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -28)
+texture = ExtResource("3_m7gjo")
 
 [node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite", "ammo_point") instance=ExtResource("1_33634")]
 animated_sprite = NodePath("AnimatedSprite2D")
@@ -61,11 +74,3 @@ frame_progress = 0.814577
 
 [node name="Marker2D" type="Marker2D" parent="Tower"]
 position = Vector2(1, -9)
-
-[node name="Area" type="Panel" parent="."]
-visible = false
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_vqfds")

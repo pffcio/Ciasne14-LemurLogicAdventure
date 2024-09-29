@@ -28,8 +28,14 @@ var timer = Timer.new()
 
 func _ready():
 	enemy_finished.connect(_on_enemy_finished)
+	GameController.is_prepare.emit(true)
+	GameController.is_prepare_val = true
 
 func start() -> void:
+	GameController.is_wave.emit(true)
+	GameController.is_prepare.emit(false)
+	GameController.is_wave_val = true
+	GameController.is_prepare_val = false
 	print("START")
 	iteration += 1
 	if iteration == 6:
@@ -50,6 +56,10 @@ func _on_timeout() -> void:
 	
 	path2d.add_child(enemies[enemies_for_iteration[counter]].instantiate())
 	counter += 1
+	GameController.is_wave.emit(false)
+	GameController.is_prepare.emit(true)
+	GameController.is_wave_val = false
+	GameController.is_prepare_val = true
 
 func _on_enemy_finished(enemy: Enemy):
 	var childs = hearts.get_children()

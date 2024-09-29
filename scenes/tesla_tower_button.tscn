@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b058ef8dsd0v4"]
+
+[ext_resource type="Texture2D" uid="uid://c0d1p8h4tnq1x" path="res://Arts/aseprite/menu_ui/tesla_tower.png" id="1_lisjn"]
+[ext_resource type="Script" path="res://scripts/tower_button.gd" id="1_ow5gl"]
+[ext_resource type="PackedScene" uid="uid://qg5xmvwjbgkr" path="res://scenes/tesla_tower.tscn" id="2_jjeqt"]
+
+[node name="Tesla Tower Button" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_ow5gl")
+tower_scene = ExtResource("2_jjeqt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lisjn")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

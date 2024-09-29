@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ejq3bisdpjwr"]
+[gd_scene load_steps=32 format=3 uid="uid://ejq3bisdpjwr"]
 
 [ext_resource type="Texture2D" uid="uid://dhk6hxdow5r48" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Default.svg" id="1_c26wg"]
 [ext_resource type="Script" path="res://scripts/game_ui_tower_defence.gd" id="1_u603c"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="8_chd7x"]
 [ext_resource type="Texture2D" uid="uid://btpnjpe2y6dpf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Default.svg" id="8_e6s2d"]
 [ext_resource type="Texture2D" uid="uid://ubiw6ifbg12l" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Hover.svg" id="9_m4bq8"]
+[ext_resource type="PackedScene" uid="uid://b058ef8dsd0v4" path="res://scenes/tesla_tower_button.tscn" id="11_yxaeg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ls6yn"]
 
@@ -38,6 +39,12 @@ texture = ExtResource("8_e6s2d")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4met"]
 texture = ExtResource("3_8olry")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnfbl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ctp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjxfp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anapn"]
 
@@ -111,7 +118,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_p4met")
 top_level = true
 layout_mode = 0
 offset_left = 950.0
-offset_top = 37.0
+offset_top = 62.0
 offset_right = 1110.0
 offset_bottom = 607.0
 theme_override_constants/h_separation = 10
@@ -125,6 +132,61 @@ tower_scene = ExtResource("6_r8vqd")
 [node name="Basic_Tower_Button" parent="CanvasLayer/Normal_UI/Tower_panel/FlowContainer" instance=ExtResource("5_xdyks")]
 layout_mode = 2
 tower_scene = ExtResource("8_chd7x")
+
+[node name="Tesla Tower Button" parent="CanvasLayer/Normal_UI/Tower_panel/FlowContainer" instance=ExtResource("11_yxaeg")]
+layout_mode = 2
+
+[node name="Tower_panel2" type="Panel" parent="CanvasLayer/Normal_UI"]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = 655.0
+offset_bottom = -388.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxTexture_p4met")
+
+[node name="FlowContainer" type="FlowContainer" parent="CanvasLayer/Normal_UI/Tower_panel2"]
+top_level = true
+z_index = 1
+layout_mode = 0
+offset_left = 950.0
+offset_top = 37.0
+offset_right = 1110.0
+offset_bottom = 607.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+vertical = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Normal_UI/Tower_panel2/FlowContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Normal_UI/Tower_panel2/FlowContainer/Panel"]
+
+[node name="Score" type="TextEdit" parent="CanvasLayer/Normal_UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 42.0
+offset_right = 142.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_tdk8f")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pnfbl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_31ctp")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_gjxfp")
+text = "Score:"
 
 [node name="Pause_menu" type="Control" parent="CanvasLayer"]
 visible = false
@@ -184,7 +246,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
 
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Home" to="." method="_on_home_pressed"]

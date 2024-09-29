@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo3o0jj481cp4"]
+[gd_scene load_steps=5 format=3 uid="uid://sfnd1y0ivq7"]
 
 [ext_resource type="Script" path="res://scripts/lemur_tutorial_connectors_1_3.gd" id="1_wbbce"]
 [ext_resource type="Texture2D" uid="uid://b0iptiy0spl24" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="2_n2e00"]

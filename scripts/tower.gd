@@ -71,6 +71,13 @@ func _attack():
 		timer.stop()
 		return
 	
+	if "Crossbow" in get_parent().name:
+		AudioPlayer.play_pitch_sfx("crossbow_attack")
+	elif "Basic" in get_parent().name:
+		AudioPlayer.play_pitch_sfx("basic_attack")
+	elif "Tesla" in get_parent().name:
+		AudioPlayer.play_pitch_sfx("tesla_attack")
+
 	var ammo_instance = ammo.instantiate()
 	ammo_point.look_at(current_enemy.global_position)
 	ammo_point.add_child(ammo_instance)
