@@ -3,9 +3,9 @@ extends Control
 
 @onready var pause_panel = $CanvasLayer/Pause_menu
 @onready var pause_button = $CanvasLayer/Normal_UI/Pause
+@onready var play_button = $CanvasLayer/Normal_UI/Play
 @onready var tower_panel = $CanvasLayer/Normal_UI/Tower_panel
 @onready var main_menu = preload("res://scenes/main_menu.tscn")
-
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -35,3 +35,6 @@ func _on_home_pressed():
 
 func _on_play_pressed():
 	get_parent().start()
+	
+func set_play_disabled(disabled: bool):
+	play_button.disabled = disabled

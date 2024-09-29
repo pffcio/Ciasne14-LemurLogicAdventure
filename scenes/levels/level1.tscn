@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://dttj2xfhc71fv" path="res://tile_sets/path.tres" id="4_faac7"]
 [ext_resource type="PackedScene" uid="uid://uhlpvfijxh3p" path="res://scenes/crossbow_tower.tscn" id="5_tdghd"]
 [ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="6_ni2tf"]
-[ext_resource type="PackedScene" uid="uid://pqq2acdvk6xu" path="res://scenes/logic_p_plate.tscn" id="7_f72cj"]
+[ext_resource type="PackedScene" path="res://scenes/logic_p_plate.tscn" id="7_f72cj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eja6y"]
 texture = ExtResource("2_knxkw")

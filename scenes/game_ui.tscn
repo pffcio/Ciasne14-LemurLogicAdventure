@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://ejq3bisdpjwr"]
+[gd_scene load_steps=30 format=3 uid="uid://ejq3bisdpjwr"]
 
 [ext_resource type="Texture2D" uid="uid://dhk6hxdow5r48" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Default.svg" id="1_c26wg"]
 [ext_resource type="Script" path="res://scripts/game_ui_tower_defence.gd" id="1_u603c"]
 [ext_resource type="Texture2D" uid="uid://dnegmh1fkfnm5" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Logotype/NameBack.svg" id="3_8olry"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_tdk8f"]
+[ext_resource type="Texture2D" uid="uid://dmrcffvwvramn" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Buttons/Square/Play/Default.png" id="4_emekl"]
 [ext_resource type="PackedScene" uid="uid://ciibw2u1qd6jc" path="res://scenes/crossbow_tower_button.tscn" id="4_ncwib"]
 [ext_resource type="Texture2D" uid="uid://k1vrp4dbodm7" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Pause/Hover.svg" id="5_sn4v5"]
 [ext_resource type="PackedScene" uid="uid://lyu450o3cifu" path="res://scenes/basic_tower_button.tscn" id="5_xdyks"]
@@ -26,6 +27,10 @@ texture = ExtResource("5_sn4v5")
 texture = ExtResource("6_k5c0c")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3urno"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6spi0"]
+texture = ExtResource("4_emekl")
+modulate_color = Color(0.464235, 0.464235, 0.464235, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hq7lt"]
 texture = ExtResource("7_udq8u")
@@ -89,6 +94,7 @@ offset_top = 24.0
 offset_right = 235.0
 offset_bottom = 111.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3urno")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6spi0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_hq7lt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cocbe")
 theme_override_styles/normal = SubResource("StyleBoxTexture_wqa4q")
@@ -184,7 +190,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
 
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Home" to="." method="_on_home_pressed"]

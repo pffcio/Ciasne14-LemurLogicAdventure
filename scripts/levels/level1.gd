@@ -6,8 +6,10 @@ class_name Level
 
 @onready var path2d = $Path2D as Path2D
 @onready var hearts = $Hearts as Node2D
+@onready var game_ui = $game_ui
 
 signal enemy_finished(enemy: Enemy)
+signal enemy_died
 
 var enemies = {
 	0: preload("res://scenes/enemy.tscn"),
@@ -22,12 +24,14 @@ var enemies_per_iteration = {
 	4: [2,2,2,3,3,3,3,3],
 	5: [3,3,3,3,3,3,3,3]
 }
+var ongoing = false
 var iteration = 0
 var counter = 0
 var timer = Timer.new()
 
 func _ready():
 	enemy_finished.connect(_on_enemy_finished)
+	enemy_died.connect(_on_enemy_died)
 
 func start() -> void:
 	print("START")
@@ -38,6 +42,8 @@ func start() -> void:
 	timer.timeout.connect(_on_timeout)
 	add_child(timer)
 	timer.start()
+	game_ui.set_play_disabled(true)
+	
 
 func _on_timeout() -> void:
 	var enemies_for_iteration = enemies_per_iteration[iteration]
@@ -55,5 +61,9 @@ func _on_enemy_finished(enemy: Enemy):
 	var childs = hearts.get_children()
 	if childs.size() > 0:
 		childs.back().queue_free()
-	enemy.queue_free()
-	
+	enemy_died.emit()
+	enemy.get_parent().queue_free()
+
+func _on_enemy_died():
+	if hearts.get_child_count() != 0 && path2d.get_child_count() == 1 && timer.is_stopped():
+		game_ui.set_play_disabled(false)
