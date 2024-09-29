@@ -1,6 +1,7 @@
 extends Control
 
 
+@export var next_scene: PackedScene
 var firstDialog = "Cześć! Jestem Wojtek, lemur, który uwielbia skakać po drzewach, ale także po... logicznych myślach! Dzisiaj chciałbym Cię zaprosić na wyjątkową przygodę – razem poznamy coś, co nazywa się logiką klasyczną. Może brzmi to trochę poważnie, ale zapewniam, że to świetna zabawa dla Twojego bystrego umysłu! Gotowy? No to skaczemy!"
 var secondDialog = "Co to jest logika?
 Logika to jak takie zasady myślenia, które pomagają nam dowiedzieć się, co jest prawdą, a co nie. To trochę jak zabawa w detektywa, który odkrywa, jakie zdania są prawdziwe, a jakie nieprawdziwe."
@@ -65,6 +66,7 @@ func proceed_with_tutorial(clicked: bool):
 		show_introduction_text(dialogInt)
 	else:
 		print("Scena po tutorialu")
+		get_tree().change_scene_to_packed(next_scene)
 	# Add any custom action you want to trigger here
 
 func show_introduction_text(index: int) ->void:

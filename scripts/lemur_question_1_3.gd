@@ -1,5 +1,7 @@
 extends Control
 
+
+@export var next_scene: PackedScene
 var question1: Array = ["res://Images/Cat500.png", "Wskaż prawdziwe zdanie", "To jest kot","To jest pies","To jest lemur","To jest dom", 2]
 var question2: Array = ["res://Images/Cat500.png", "Wskaż prawdziwe zdanie", "Ten kot jest czarny","Ten pies jest w paski","To jest lemur","Ten kot jest pomarańczowy w paski", 5]
 var question3: Array = ["res://Images/House500.png", "Wskaż prawdziwe zdanie", "To jest kot","To jest pies","To jest lemur","To jest dom", 5]
@@ -79,6 +81,7 @@ func check_score():
 		get_tree().reload_current_scene()
 	if(current_score == max_score):
 		print("next scene")
+		get_tree().change_scene_to_packed(next_scene)
 
 func _on_audio_finished():
 	check_score()

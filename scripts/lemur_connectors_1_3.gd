@@ -1,5 +1,7 @@
 extends Control
 
+
+@export var next_scene: PackedScene
 var question1: Array = ["res://Images/Cat500.png", "To jest kot ___ to jest pies", 1]
 var question2: Array = ["res://Images/Cat500.png", "To ___ jest pies",  2]
 var question3: Array = ["res://Images/House500.png", "Ten dom jest zielony ___ posiada czerwony dach", 0]
@@ -74,3 +76,4 @@ func _on_audio_finished():
 		get_tree().reload_current_scene()
 	if(GameController.correct_answers_connectors==GameController.max_correct_answers_connectors):
 		print("Kolejna scena")
+		get_tree().change_scene_to_packed(next_scene)

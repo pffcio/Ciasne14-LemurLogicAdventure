@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://kyw3iu5ju65a"]
+[gd_scene load_steps=12 format=3 uid="uid://cac4gviql4jp4"]
 
 [ext_resource type="Script" path="res://scripts/lemur_connectors_1_3.gd" id="1_pib17"]
 [ext_resource type="Script" path="res://scripts/VBoxContainerShake.gd" id="2_pnkc6"]
