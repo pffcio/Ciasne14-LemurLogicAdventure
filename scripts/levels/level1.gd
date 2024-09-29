@@ -9,10 +9,21 @@ class_name Level
 
 signal enemy_finished(enemy: Enemy)
 
-var enemy = preload("res://scenes/enemy.tscn")
-
+var enemies = {
+	0: preload("res://scenes/enemy.tscn"),
+	1: preload("res://scenes/enemy_2.tscn"),
+	2: preload("res://scenes/enemy_3.tscn"),
+	3: preload("res://scenes/enemy_4.tscn"),
+}
+var enemies_per_iteration = {
+	1: [0,0,0,0],
+	2: [0,0,1,1,1,1],
+	3: [1,1,2,2,2,2,2,2],
+	4: [2,2,2,3,3,3,3,3],
+	5: [3,3,3,3,3,3,3,3]
+}
 var iteration = 0
-var counter = 1
+var counter = 0
 var timer = Timer.new()
 
 func _ready():
@@ -21,25 +32,23 @@ func _ready():
 func start() -> void:
 	print("START")
 	iteration += 1
-	if iteration == 3:
+	if iteration == 6:
 		iteration = 1
-	elements *= iteration
-	if iteration % 2 == 0:
-		timeout_in_seconds -= 0.1
 	timer.wait_time = timeout_in_seconds
 	timer.timeout.connect(_on_timeout)
 	add_child(timer)
 	timer.start()
 
 func _on_timeout() -> void:
-	if counter >= elements:
-		counter = 1
+	var enemies_for_iteration = enemies_per_iteration[iteration]
+	if counter >= enemies_for_iteration.size():
+		counter = 0
 		timer.stop()
 		timer.timeout.disconnect(_on_timeout)
 		remove_child(timer)
 		return
 	
-	path2d.add_child(enemy.instantiate())
+	path2d.add_child(enemies[enemies_for_iteration[counter]].instantiate())
 	counter += 1
 
 func _on_enemy_finished(enemy: Enemy):
