@@ -36,6 +36,10 @@ var enemies_per_iteration = {
 	}
 }
 
+var level_scenes = {
+	2: "res://scenes/levels/test_level2.tscn"
+}
+
 var ongoing = false
 var iteration = 0
 var counter = 0
@@ -48,8 +52,14 @@ func _ready():
 func start() -> void:
 	print("START")
 	iteration += 1
-	if iteration == 6:
-		iteration = 1
+	if iteration == 2:
+		var index = level+1
+		if level_scenes.has(index) == false:
+			print("NIe ISTNIEJE")
+			return
+		var scene = level_scenes[index]
+		get_tree().change_scene_to_file(scene)
+		return
 	timer.wait_time = timeout_in_seconds
 	timer.timeout.connect(_on_timeout)
 	add_child(timer)
