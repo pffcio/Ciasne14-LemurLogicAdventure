@@ -15,6 +15,8 @@ signal is_prepare(value: bool)
 var is_prepare_val = false
 var is_wave_val = false
 
+var delete_bg_music_at_start = false
+
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	task_complited.connect(_on_task_completed)

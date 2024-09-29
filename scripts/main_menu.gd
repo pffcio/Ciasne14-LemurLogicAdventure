@@ -8,6 +8,9 @@ func _ready():
 	GameController.is_main_menu.emit(true)
 	var exe_path = "res://scenes/Intro/Intro.exe" # Replace with the actual path to your .exe
 	OS.execute(exe_path, []) 
+	if !GameController.delete_bg_music_at_start:
+		GameController.delete_bg_music_at_start = true
+		get_tree().get_root().get_node("/root/BackgroundMusic").queue_free()
 
 func _on_start_pressed():
 	$Start2.hide()

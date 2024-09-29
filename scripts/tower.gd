@@ -91,7 +91,7 @@ func _attack():
 		AudioPlayer.play_pitch_sfx("tesla_attack")
 
 	var ammo_instance = ammo.instantiate()
-	ammo.dmg = bullet_dmg
+	ammo_instance.dmg = bullet_dmg
 	ammo_point.look_at(current_enemy.global_position)
 	ammo_point.add_child(ammo_instance)
 	is_shooting = true

@@ -52,8 +52,8 @@ func _ready():
 	enemy_died.connect(_on_enemy_died)
 
 func start() -> void:
-	GameController.is_wave.emit(true)
 	GameController.is_prepare.emit(false)
+	GameController.is_wave.emit(true)
 	GameController.is_wave_val = true
 	GameController.is_prepare_val = false
 	print("START")
@@ -84,10 +84,6 @@ func _on_timeout() -> void:
 	
 	path2d.add_child(enemies[enemies_for_iteration[counter]].instantiate())
 	counter += 1
-	GameController.is_wave.emit(false)
-	GameController.is_prepare.emit(true)
-	GameController.is_wave_val = false
-	GameController.is_prepare_val = true
 
 func _on_enemy_finished(enemy: Enemy):
 	## TODO check hearts and if player dies
@@ -100,3 +96,7 @@ func _on_enemy_finished(enemy: Enemy):
 func _on_enemy_died():
 	if hearts.get_child_count() != 0 && path2d.get_child_count() == 1 && timer.is_stopped():
 		game_ui.set_play_disabled(false)
+		GameController.is_wave.emit(false)
+		GameController.is_prepare.emit(true)
+		GameController.is_wave_val = false
+		GameController.is_prepare_val = true

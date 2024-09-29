@@ -157,6 +157,7 @@ func _on_is_paused(value: bool):
 	
 	
 func _on_is_wave(value: bool):
+	print("test", value)
 	if (value):
 		play_music("wave_music")
 	elif (!value && curr_music != null):

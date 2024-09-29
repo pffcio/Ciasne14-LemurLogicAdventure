@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://crnn4g3mk04so" path="res://Arts/Texture/TX Tileset Grass.png" id="2_3hvsk"]
 [ext_resource type="TileSet" uid="uid://b2p5hvauxto84" path="res://tile_sets/trees.tres" id="3_efwlj"]
 [ext_resource type="TileSet" uid="uid://dttj2xfhc71fv" path="res://tile_sets/path.tres" id="4_47da3"]
-[ext_resource type="PackedScene" uid="uid://ejq3bisdpjwr" path="res://scenes/game_ui.tscn" id="5_q0hsw"]
 [ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="6_lbrre"]
 [ext_resource type="PackedScene" uid="uid://uhlpvfijxh3p" path="res://scenes/crossbow_tower.tscn" id="7_cjiw5"]
 [ext_resource type="PackedScene" path="res://scenes/logic_p_plate.tscn" id="8_s7uno"]
-[ext_resource type="Texture2D" uid="uid://cb034ttbxqh8" path="res://images/heart.png" id="9_wy7uo"]
+[ext_resource type="PackedScene" uid="uid://xbk1rbyipy0p" path="res://scenes/game_ui.tscn" id="9_cuqnf"]
+[ext_resource type="Texture2D" uid="uid://cb034ttbxqh8" path="res://Images/heart.png" id="9_wy7uo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eja6y"]
 texture = ExtResource("2_3hvsk")
@@ -299,12 +299,6 @@ tile_set = ExtResource("4_47da3")
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_8gsro")
 
-[node name="game_ui" parent="." instance=ExtResource("5_q0hsw")]
-offset_left = 195.0
-offset_top = 30.0
-offset_right = 195.0
-offset_bottom = 30.0
-
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="BasicTower" parent="Towers" instance=ExtResource("6_lbrre")]
@@ -338,3 +332,5 @@ texture = ExtResource("9_wy7uo")
 position = Vector2(604, 44)
 scale = Vector2(0.0210417, 0.0210417)
 texture = ExtResource("9_wy7uo")
+
+[node name="game_ui" parent="." instance=ExtResource("9_cuqnf")]

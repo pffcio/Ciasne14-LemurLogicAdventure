@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dbtdi24yv4lyg"]
+[gd_scene load_steps=36 format=3 uid="uid://xbk1rbyipy0p"]
 
 [ext_resource type="Texture2D" uid="uid://dhk6hxdow5r48" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Default.svg" id="1_c26wg"]
 [ext_resource type="Script" path="res://scripts/game_ui_tower_defence.gd" id="1_u603c"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="8_chd7x"]
 [ext_resource type="Texture2D" uid="uid://btpnjpe2y6dpf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Default.svg" id="8_e6s2d"]
 [ext_resource type="Texture2D" uid="uid://ubiw6ifbg12l" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Hover.svg" id="9_m4bq8"]
-[ext_resource type="PackedScene" path="res://scenes/tesla_tower_button.tscn" id="11_yxaeg"]
+[ext_resource type="PackedScene" uid="uid://b058ef8dsd0v4" path="res://scenes/tesla_tower_button.tscn" id="11_yxaeg"]
 [ext_resource type="Texture2D" uid="uid://ebr4puhiavlp" path="res://Arts/aseprite/menu_ui/stop_sign.png" id="12_ekm25"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ls6yn"]
