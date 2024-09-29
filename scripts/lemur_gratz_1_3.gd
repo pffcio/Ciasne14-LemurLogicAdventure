@@ -1,7 +1,7 @@
 extends Control
 
 
-@export var next_scene: PackedScene
+@export var next_scene = "res://scenes/main_menu.tscn"
 var firstDialog = "Gratulacje! Opanowanie podstaw logiki klasycznej to ogromne osiągnięcie, które pokazuje, że masz umiejętność myślenia w sposób jasny i uporządkowany. Teraz otwiera się przed Tobą fascynujący świat pełen kolejnych wyzwań i odkryć!"
 var secondDialog = "Zachęcam Cię, abyś dalej zgłębiał tajniki logiki, bo to nie tylko ćwiczy umysł, ale także pomaga lepiej rozumieć otaczający nas świat. Kto wie, jakie ciekawe zagadki i pytania czekają na Ciebie w przyszłości! Trzymam kciuki za Twoje dalsze sukcesy!"
 
@@ -25,7 +25,7 @@ func _on_left_button_click():
 
 func proceed_with_tutorial():
 		print("Scena po tutorialu")
-		get_tree().change_scene_to_packed(next_scene)
+		get_tree().change_scene_to_file(next_scene)
 	# Add any custom action you want to trigger here
 
 
