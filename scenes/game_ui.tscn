@@ -289,7 +289,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
 
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Home" to="." method="_on_home_pressed"]
