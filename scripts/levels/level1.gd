@@ -52,7 +52,7 @@ func _ready():
 func start() -> void:
 	print("START")
 	iteration += 1
-	if iteration == 2:
+	if iteration == 6:
 		var index = level+1
 		if level_scenes.has(index) == false:
 			print("NIe ISTNIEJE")
