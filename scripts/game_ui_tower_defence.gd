@@ -62,5 +62,8 @@ func show_next_level():
 func show_finished():
 	$CanvasLayer/Finish.show()
 
+func show_failed():
+	$CanvasLayer/Failed.show()
+
 func _on_next_level_pressed():
 	next_level.emit()

@@ -95,17 +95,31 @@ func _on_enemy_finished(enemy: Enemy):
 	enemy.get_parent().queue_free()
 
 func _on_enemy_died():
-	if hearts.get_child_count() != 0 && path2d.get_child_count() == 1 && timer.is_stopped():
+	if hearts.get_child_count() > 1 && path2d.get_child_count() == 1 && timer.is_stopped():
 		game_ui.set_play_disabled(false)
+		GameController.is_wave.emit(false)
+		GameController.is_prepare.emit(true)
+		GameController.is_wave_val = false
+		GameController.is_prepare_val = true
+	if hearts.get_child_count() <= 1 && path2d.get_child_count() == 1 && timer.is_stopped():
+		game_ui.show_failed()
 		GameController.is_wave.emit(false)
 		GameController.is_prepare.emit(true)
 		GameController.is_wave_val = false
 		GameController.is_prepare_val = true
 	if level == 2 && iteration == 5 && path2d.get_child_count() == 1 && hearts.get_child_count() != 0 && timer.is_stopped():
 		game_ui.show_finished()
+		GameController.is_wave.emit(false)
+		GameController.is_prepare.emit(true)
+		GameController.is_wave_val = false
+		GameController.is_prepare_val = true
 		return
 	if iteration == 5 && path2d.get_child_count() == 1 && hearts.get_child_count() != 0 && timer.is_stopped():
 		game_ui.show_next_level()
+		GameController.is_wave.emit(false)
+		GameController.is_prepare.emit(true)
+		GameController.is_wave_val = false
+		GameController.is_prepare_val = true
 
 
 func _on_next_level():

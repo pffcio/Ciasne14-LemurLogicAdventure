@@ -333,6 +333,53 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_lhr3e")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
 
+[node name="Failed" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Failed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Failed"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -98.0
+offset_right = 284.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_tdk8f")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_anapn")
+text = "Przegrałeś"
+
+[node name="Home2" type="Button" parent="CanvasLayer/Failed"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 340.0
+offset_right = 617.0
+offset_bottom = 427.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o3dka")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lhr3e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
+
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
@@ -340,3 +387,4 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="CanvasLayer/Next_level/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="CanvasLayer/Finish/Home2" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="CanvasLayer/Failed/Home2" to="." method="_on_home_pressed"]
