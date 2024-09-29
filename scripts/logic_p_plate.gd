@@ -16,12 +16,27 @@ var anim_names = [
 	"negacja"
 ]
 
+var ans_1 = ""
+var ans_2 = ""
+
 @export var plate_type : plate_types
 @onready var anim_sprite = $AnimatedSprite2D
+@onready var label = $Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	anim_sprite.animation = anim_names[plate_type]
+	GameController.quests_for_tower_def.shuffle()
+	var selected : Array = GameController.quests_for_tower_def[0]
+	ans_1 = selected[1]
+	ans_2 = selected[2]
+	print(ans_1)
+	print(ans_2)
+	if selected.back() == "and":
+		plate_type = plate_types.AND
+	elif selected.back() == "or":
+		plate_type = plate_types.OR
+	label.text = selected[0]
+	anim_sprite.animation = anim_names[plate_type]	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -59,16 +74,24 @@ func handle_logic():
 	if is_instance_valid(left_tower) and is_instance_valid(right_tower):
 		match self.plate_type:
 			plate_types.AND:
-				if left_tower.is_shooting and right_tower.is_shooting:
-					pass
+				if left_tower.selected_ans == ans_1 and right_tower.selected_ans == ans_2:
+					left_tower.bullet_dmg = 20
+					right_tower.bullet_dmg = 20
+					print("AND OK")
 			plate_types.OR:
-				if left_tower.is_shooting or right_tower.is_shooting:
-					pass
+				if left_tower.selected_ans == ans_1 or right_tower.selected_ans == ans_2:
+					left_tower.bullet_dmg = 20
+					right_tower.bullet_dmg = 20
+					print("OR OK")
 			plate_types.IMPLIKACJA:
-				if not left_tower.is_shooting or right_tower.is_shooting:
-					pass
+				if not left_tower.selected_ans == ans_1 or right_tower.selected_ans == ans_2:
+					left_tower.bullet_dmg = 20
+					right_tower.bullet_dmg = 20
 			plate_types.ROWNOWAZNOSC:
-				if left_tower.is_shooting == right_tower.is_shooting:
-					print("test")
-			
+				if left_tower.selected_ans == ans_1 == right_tower.selected_ans == ans_2:
+					left_tower.bullet_dmg = 20
+					right_tower.bullet_dmg = 20
+			_:
+				left_tower.bullet_dmg = 10
+				right_tower.bullet_dmg = 10
 	

@@ -12,11 +12,21 @@ var current_enemy: Enemy = null
 @onready var sprite = $Sprite2D
 
 @onready var ammo = preload("res://scenes/towers/ammo.tscn")
+@onready var d_down_menu = $OptionButton
+@export var selected_ans = ""
+@export var bullet_dmg = 10
 
 var timer = Timer.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var opt_id = 1
+	for i in range(GameController.quests_for_tower_def.size()):
+		for j in range(1, GameController.quests_for_tower_def[i].size() - 1):
+			print(i)
+			print(j)
+			d_down_menu.add_item(GameController.quests_for_tower_def[i][j], opt_id)
+			opt_id += 1
 	add_child(animated_sprite)
 	timer.wait_time = ammo_timeout_in_seconds
 	timer.autostart = false
@@ -81,8 +91,13 @@ func _attack():
 		AudioPlayer.play_pitch_sfx("tesla_attack")
 
 	var ammo_instance = ammo.instantiate()
+	ammo.dmg = bullet_dmg
 	ammo_point.look_at(current_enemy.global_position)
 	ammo_point.add_child(ammo_instance)
 	is_shooting = true
 	
 	
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	selected_ans = d_down_menu.get_item_text(index)
