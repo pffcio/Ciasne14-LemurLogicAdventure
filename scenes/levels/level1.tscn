@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://crnn4g3mk04so" path="res://Arts/Texture/TX Tileset Grass.png" id="2_knxkw"]
 [ext_resource type="TileSet" uid="uid://b2p5hvauxto84" path="res://tile_sets/trees.tres" id="3_2pfyu"]
 [ext_resource type="TileSet" uid="uid://dttj2xfhc71fv" path="res://tile_sets/path.tres" id="4_faac7"]
-[ext_resource type="PackedScene" uid="uid://b1dehc7i7gqgy" path="res://scenes/crossbow_tower.tscn" id="5_tdghd"]
-[ext_resource type="PackedScene" uid="uid://ro0wt3djn31x" path="res://scenes/basic_tower.tscn" id="6_ni2tf"]
+[ext_resource type="PackedScene" uid="uid://uhlpvfijxh3p" path="res://scenes/crossbow_tower.tscn" id="5_tdghd"]
+[ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="6_ni2tf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eja6y"]
 texture = ExtResource("2_knxkw")
@@ -277,8 +277,8 @@ point_count = 2
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_fbolq")
-elements = 5
-timeout_in_seconds = 0.5
+elements = 20
+timeout_in_seconds = 0.1
 
 [node name="Grass" type="TileMapLayer" parent="."]
 use_parent_material = true

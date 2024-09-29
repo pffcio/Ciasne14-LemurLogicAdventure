@@ -1,0 +1,165 @@
+[gd_scene load_steps=14 format=3 uid="uid://j8brv8qmbcbw"]
+
+[ext_resource type="Script" path="res://scripts/lemur_question_1_3.gd" id="1_1458g"]
+[ext_resource type="PackedScene" uid="uid://bp03lrlf7dyeu" path="res://scenes/basic_logic/lemur_tutorial_connectors_1_3.tscn" id="2_banq1"]
+[ext_resource type="Texture2D" uid="uid://b0iptiy0spl24" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="2_h5ij7"]
+[ext_resource type="Script" path="res://scripts/VBoxContainerShake.gd" id="3_2e015"]
+[ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="4_5am5k"]
+[ext_resource type="Texture2D" uid="uid://bew758i3oaafe" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Default.svg" id="5_ipjhv"]
+[ext_resource type="Texture2D" uid="uid://c3ofe16hghx1v" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Hover.svg" id="6_vk10p"]
+[ext_resource type="Texture2D" uid="uid://b8s25t41llmke" path="res://Arts/aseprite/menu_ui/star.png" id="7_xk17q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_is4u6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhv5k"]
+texture = ExtResource("5_ipjhv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oixoe"]
+texture = ExtResource("6_vk10p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p1852"]
+texture = ExtResource("6_vk10p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ynia"]
+texture = ExtResource("5_ipjhv")
+
+[node name="lemur_question_1_3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1458g")
+next_scene = ExtResource("2_banq1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h5ij7")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_2e015")
+
+[node name="Task" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_5am5k")
+theme_override_font_sizes/font_size = 32
+
+[node name="Image" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Answers" type="GridContainer" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="A1" type="Button" parent="VBoxContainer/Answers"]
+texture_filter = 1
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("4_5am5k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_is4u6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oixoe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p1852")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ynia")
+
+[node name="A2" type="Button" parent="VBoxContainer/Answers"]
+texture_filter = 1
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("4_5am5k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_is4u6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oixoe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p1852")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ynia")
+
+[node name="A3" type="Button" parent="VBoxContainer/Answers"]
+texture_filter = 1
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("4_5am5k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_is4u6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oixoe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p1852")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ynia")
+
+[node name="A4" type="Button" parent="VBoxContainer/Answers"]
+texture_filter = 1
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("4_5am5k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_is4u6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oixoe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p1852")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ynia")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Particle" type="CPUParticles2D" parent="."]
+position = Vector2(512, 0)
+emitting = false
+amount = 100
+texture = ExtResource("7_xk17q")
+emission_shape = 1
+emission_sphere_radius = 112.18
+spread = 180.0
+initial_velocity_min = 9.0
+initial_velocity_max = 9.0
+
+[connection signal="pressed" from="VBoxContainer/Answers/A1" to="." method="_on_a_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Answers/A2" to="." method="_on_a_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Answers/A3" to="." method="_on_a_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Answers/A4" to="." method="_on_a_4_pressed"]

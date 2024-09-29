@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://sppcnyh5q7k3"]
+
+[ext_resource type="Script" path="res://scripts/path_follow_enemy.gd" id="1_o0d2r"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="2_h8o83"]
+[ext_resource type="Texture2D" uid="uid://c1m4w4s7c7cab" path="res://Arts/aseprite/enemies/penguin4.png" id="3_mda7u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp4v5"]
+atlas = ExtResource("3_mda7u")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyhva"]
+atlas = ExtResource("3_mda7u")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmhru"]
+atlas = ExtResource("3_mda7u")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mebw"]
+atlas = ExtResource("3_mda7u")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk2kx"]
+atlas = ExtResource("3_mda7u")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dptj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp4v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyhva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmhru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mebw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk2kx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7ia4"]
+radius = 112.0
+
+[node name="PathFollow2D" type="PathFollow2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_o0d2r")
+speed = 120
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_h8o83")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Enemy"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_dptj4")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(-5, -22)
+shape = SubResource("CircleShape2D_w7ia4")

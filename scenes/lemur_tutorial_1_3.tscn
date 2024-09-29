@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh6a1551b4u3i"]
+[gd_scene load_steps=4 format=3 uid="uid://nb26hhei75qb"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_jr56i"]
 [ext_resource type="Texture2D" uid="uid://b0iptiy0spl24" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="2_uf2hr"]

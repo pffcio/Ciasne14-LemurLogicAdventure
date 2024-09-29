@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lkt5qatwq6vu"
-path="res://.godot/imported/TeddyBear500.png-93b69b81aa22a91c7e4d9c31bb40f792.ctex"
+uid="uid://citv2ywj4m5fd"
+path="res://.godot/imported/TeddyBear500.png-d263c7c70f6c9918695c6e51b6388753.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/TeddyBear500.png"
-dest_files=["res://.godot/imported/TeddyBear500.png-93b69b81aa22a91c7e4d9c31bb40f792.ctex"]
+source_file="res://Images/TeddyBear500.png"
+dest_files=["res://.godot/imported/TeddyBear500.png-d263c7c70f6c9918695c6e51b6388753.ctex"]
 
 [params]
 

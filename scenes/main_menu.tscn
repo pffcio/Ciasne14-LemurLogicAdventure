@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjofnifak10rp"]
+[gd_scene load_steps=19 format=3 uid="uid://cjofnifak10rp"]
 
-[ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_844tw"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_s2nlu"]
 [ext_resource type="Texture2D" uid="uid://k7ovxq5oubcj" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Background/Vector/Forest.svg" id="2_n8gng"]
+[ext_resource type="PackedScene" uid="uid://hncubbsjhedo" path="res://scenes/levels/level1.tscn" id="2_v0yux"]
+[ext_resource type="PackedScene" uid="uid://dbydrx3ert75v" path="res://scenes/basic_logic/lemur_tutorial_1_3.tscn" id="3_b6n83"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_m4k4n"]
 [ext_resource type="Texture2D" uid="uid://8ucsyo2iqyj0" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Hover.svg" id="4_bf83e"]
 [ext_resource type="Texture2D" uid="uid://dohawxjhakiwm" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Default-1.svg" id="5_bygv2"]
+[ext_resource type="Texture2D" uid="uid://c3ofe16hghx1v" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Hover.svg" id="7_4cvl2"]
+[ext_resource type="Texture2D" uid="uid://bew758i3oaafe" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Default.svg" id="8_mhj5g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43ny6"]
 
@@ -19,6 +23,17 @@ texture = ExtResource("5_bygv2")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pl458"]
 texture = ExtResource("4_bf83e")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7mt4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wl53s"]
+texture = ExtResource("7_4cvl2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdr2e"]
+texture = ExtResource("7_4cvl2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taok6"]
+texture = ExtResource("8_mhj5g")
+
 [node name="Main Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -26,23 +41,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_844tw")
+script = ExtResource("1_s2nlu")
+first_level = ExtResource("2_v0yux")
+basic_logic_level = ExtResource("3_b6n83")
 
 [node name="Forest" type="Sprite2D" parent="."]
 position = Vector2(583, 321)
 texture = ExtResource("2_n8gng")
 
-[node name="Start" type="Button" parent="."]
+[node name="Start2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Start2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -102.0
-offset_top = -46.0
-offset_right = 102.0
-offset_bottom = 46.0
+offset_left = 454.0
+offset_top = 258.0
+offset_right = 658.0
+offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
@@ -57,17 +79,17 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_uyvxc")
 theme_override_styles/normal = SubResource("StyleBoxTexture_uyvxc")
 text = "Start"
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" type="Button" parent="Start2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -102.0
-offset_top = 94.0
-offset_right = 102.0
-offset_bottom = 186.0
+offset_left = 454.0
+offset_top = 398.0
+offset_right = 658.0
+offset_bottom = 490.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
@@ -81,3 +103,76 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_pl458")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uyvxc")
 theme_override_styles/normal = SubResource("StyleBoxTexture_uyvxc")
 text = "Quit"
+
+[node name="Choose level" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Introduction" type="Button" parent="Choose level"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 454.0
+offset_top = 183.0
+offset_right = 658.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_m4k4n")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
+theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
+text = "Intro"
+
+[node name="Through game" type="Button" parent="Choose level"]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 343.0
+offset_right = 678.0
+offset_bottom = 435.0
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_m4k4n")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
+theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
+text = "Game"
+
+[node name="Back" type="Button" parent="Choose level"]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 483.0
+offset_right = 678.0
+offset_bottom = 575.0
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_m4k4n")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
+theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
+text = "Back"
+
+[connection signal="pressed" from="Start2/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Start2/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Choose level/Introduction" to="." method="_on_introduction_pressed"]
+[connection signal="pressed" from="Choose level/Through game" to="." method="_on_through_game_pressed"]
+[connection signal="pressed" from="Choose level/Back" to="." method="_on_back_pressed"]

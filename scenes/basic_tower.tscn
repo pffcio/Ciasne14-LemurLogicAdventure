@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ro0wt3djn31x"]
+[gd_scene load_steps=5 format=3 uid="uid://cjdxrp6tq42pq"]
 
 [ext_resource type="PackedScene" uid="uid://b2vmkl8xii07s" path="res://scenes/tower.tscn" id="1_ix7bb"]
-[ext_resource type="Texture2D" uid="uid://b8duovmos08ia" path="res://Arts/aseprite/towers/tesla_tower.png" id="2_sdoaw"]
+[ext_resource type="Texture2D" uid="uid://cfkb4m74ys1b" path="res://Arts/aseprite/towers/tesla_tower.png" id="2_sdoaw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l8g1x"]
 animations = [{
@@ -14,10 +14,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cux0g"]
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
 [node name="BasicTower" type="Node2D"]
 
-[node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite") instance=ExtResource("1_ix7bb")]
+[node name="Tower" parent="." node_paths=PackedStringArray("animated_sprite", "ammo_point") instance=ExtResource("1_ix7bb")]
 animated_sprite = NodePath("AnimatedSprite2D")
+ammo_point = NodePath("Marker2D")
+ammo_timeout_in_seconds = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tower"]
 sprite_frames = SubResource("SpriteFrames_l8g1x")
+
+[node name="Marker2D" type="Marker2D" parent="Tower"]
+
+[node name="Area" type="Panel" parent="."]
+visible = false
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cux0g")
