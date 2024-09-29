@@ -125,7 +125,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_08w1i")
 theme_override_styles/hover = SubResource("StyleBoxTexture_pl458")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uyvxc")
 theme_override_styles/normal = SubResource("StyleBoxTexture_uyvxc")
-text = "Quit"
+text = "Wyjście"
 
 [node name="Choose level" type="Control" parent="."]
 visible = false
@@ -156,7 +156,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
 theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
-text = "Intro"
+text = "Podstawy"
 
 [node name="Through game" type="Button" parent="Choose level"]
 layout_mode = 0
@@ -174,7 +174,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
 theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
-text = "Game"
+text = "Rozszerzenie"
 
 [node name="Back" type="Button" parent="Choose level"]
 layout_mode = 0
@@ -192,7 +192,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
 theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
-text = "Back"
+text = "Powrót"
 
 [node name="Gratification" type="Control" parent="."]
 visible = false
@@ -291,12 +291,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_a7mt4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wl53s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bdr2e")
 theme_override_styles/normal = SubResource("StyleBoxTexture_taok6")
-text = "Back"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Gratification"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+text = "Powrót"
 
 [connection signal="pressed" from="Start2/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Start2/Gratification" to="." method="_on_gratification_pressed"]
