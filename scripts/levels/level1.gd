@@ -4,6 +4,8 @@ class_name Level
 @export var elements: int
 @export var timeout_in_seconds: float
 
+@export var level: int = 1
+
 @onready var path2d = $Path2D as Path2D
 @onready var hearts = $Hearts as Node2D
 @onready var game_ui = $game_ui
@@ -18,12 +20,22 @@ var enemies = {
 	3: preload("res://scenes/enemy_4.tscn"),
 }
 var enemies_per_iteration = {
-	1: [0,0,0,0],
-	2: [0,0,1,1,1,1],
-	3: [1,1,2,2,2,2,2,2],
-	4: [2,2,2,3,3,3,3,3],
-	5: [3,3,3,3,3,3,3,3]
+	1: {
+		1: [0,0,0,0],
+		2: [0,0,1,1,1,1],
+		3: [1,1,2,2,2,2,2,2],
+		4: [2,2,2,3,3,3,3,3],
+		5: [3,3,3,3,3,3,3,3]
+	},
+	2: {
+		1: [1,1,1,1,1],
+		2: [0,0,1,1,0,1],
+		3: [3,1,2,0,2,2,2,2],
+		4: [2,1,2,3,3,3,3,0],
+		5: [3,3,3,3,3,3,3,3,3]
+	}
 }
+
 var ongoing = false
 var iteration = 0
 var counter = 0
@@ -46,7 +58,7 @@ func start() -> void:
 	
 
 func _on_timeout() -> void:
-	var enemies_for_iteration = enemies_per_iteration[iteration]
+	var enemies_for_iteration = enemies_per_iteration[level][iteration]
 	if counter >= enemies_for_iteration.size():
 		counter = 0
 		timer.stop()
