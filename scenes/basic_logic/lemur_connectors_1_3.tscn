@@ -1,0 +1,153 @@
+[gd_scene load_steps=14 format=3 uid="uid://p1ij77cbuya2"]
+
+[ext_resource type="Script" path="res://scripts/lemur_connectors_1_3.gd" id="1_xdmoh"]
+[ext_resource type="PackedScene" uid="uid://bd3v8a7px2ls7" path="res://scenes/basic_logic/lemur_graz_1_3.tscn" id="2_i4y87"]
+[ext_resource type="Texture2D" uid="uid://b0iptiy0spl24" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="2_olnir"]
+[ext_resource type="Script" path="res://scripts/VBoxContainerShake.gd" id="3_3vb0e"]
+[ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="4_1i6ts"]
+[ext_resource type="Texture2D" uid="uid://bew758i3oaafe" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Default.svg" id="5_kj0j1"]
+[ext_resource type="Texture2D" uid="uid://c3ofe16hghx1v" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Hover.svg" id="6_qlqxm"]
+[ext_resource type="Texture2D" uid="uid://b8s25t41llmke" path="res://Arts/aseprite/menu_ui/star.png" id="7_7htcq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1p4i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhv5k"]
+texture = ExtResource("5_kj0j1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0p6ee"]
+texture = ExtResource("6_qlqxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jbuxt"]
+texture = ExtResource("6_qlqxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtgti"]
+texture = ExtResource("5_kj0j1")
+
+[node name="lemur_connectors_1_3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xdmoh")
+next_scene = ExtResource("2_i4y87")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_olnir")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_3vb0e")
+
+[node name="Task" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_1i6ts")
+theme_override_font_sizes/font_size = 32
+text = "W brakujące pole wybierz odpowiednie wyrażenie,
+ aby zdanie było prawdziwe"
+horizontal_alignment = 1
+
+[node name="QuestionImage" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sentence" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_1i6ts")
+
+[node name="Answers" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+columns = 3
+
+[node name="A1" type="Button" parent="VBoxContainer/Answers"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("4_1i6ts")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1p4i")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0p6ee")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jbuxt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wtgti")
+text = "I"
+
+[node name="A2" type="Button" parent="VBoxContainer/Answers"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("4_1i6ts")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1p4i")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0p6ee")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jbuxt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wtgti")
+text = "LUB"
+
+[node name="A3" type="Button" parent="VBoxContainer/Answers"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("4_1i6ts")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1p4i")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0p6ee")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jbuxt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wtgti")
+text = "NIE"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Particle" type="CPUParticles2D" parent="."]
+position = Vector2(512, 0)
+emitting = false
+amount = 100
+texture = ExtResource("7_7htcq")
+emission_shape = 1
+emission_sphere_radius = 112.18
+spread = 180.0
+initial_velocity_min = 9.0
+initial_velocity_max = 9.0
+
+[connection signal="pressed" from="VBoxContainer/Answers/A1" to="." method="_on_a_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Answers/A2" to="." method="_on_a_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Answers/A3" to="." method="_on_a_3_pressed"]
