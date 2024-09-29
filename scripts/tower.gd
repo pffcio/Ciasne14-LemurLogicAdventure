@@ -21,12 +21,13 @@ var timer = Timer.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var opt_id = 1
+	var answers = []
 	for i in range(GameController.quests_for_tower_def.size()):
 		for j in range(1, GameController.quests_for_tower_def[i].size() - 1):
-			print(i)
-			print(j)
-			d_down_menu.add_item(GameController.quests_for_tower_def[i][j], opt_id)
-			opt_id += 1
+			if not answers.has(GameController.quests_for_tower_def[i][j]):
+				d_down_menu.add_item(GameController.quests_for_tower_def[i][j], opt_id)
+				answers.append(GameController.quests_for_tower_def[i][j])
+				opt_id += 1
 	add_child(animated_sprite)
 	timer.wait_time = ammo_timeout_in_seconds
 	timer.autostart = false

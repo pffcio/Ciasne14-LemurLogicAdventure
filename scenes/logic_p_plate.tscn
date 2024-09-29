@@ -115,6 +115,8 @@ size = Vector2(78, 74)
 script = ExtResource("1_0ic0u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, 1)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_dgf4x")
 animation = &"rownowaznosc"
 
@@ -123,6 +125,13 @@ position = Vector2(-55, 0)
 collision_layer = 4
 collision_mask = 4
 
+[node name="ColorRect" type="ColorRect" parent="LogicLeft"]
+offset_left = -34.0
+offset_top = -31.0
+offset_right = 34.0
+offset_bottom = 31.0
+color = Color(0.435294, 0.898039, 0.152941, 0.172549)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LogicLeft"]
 shape = SubResource("RectangleShape2D_da22l")
 
@@ -130,6 +139,13 @@ shape = SubResource("RectangleShape2D_da22l")
 position = Vector2(55, 0)
 collision_layer = 4
 collision_mask = 4
+
+[node name="ColorRect2" type="ColorRect" parent="LogicRight"]
+offset_left = -33.0
+offset_top = -30.0
+offset_right = 35.0
+offset_bottom = 30.0
+color = Color(0.435294, 0.898039, 0.152941, 0.172549)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LogicRight"]
 shape = SubResource("RectangleShape2D_kwp6a")

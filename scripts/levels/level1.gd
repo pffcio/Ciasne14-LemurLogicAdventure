@@ -50,6 +50,7 @@ func _ready():
 	GameController.is_prepare.emit(true)
 	GameController.is_prepare_val = true
 	enemy_died.connect(_on_enemy_died)
+	game_ui.next_level.connect(_on_next_level)
 
 func start() -> void:
 	GameController.is_prepare.emit(false)
@@ -71,7 +72,7 @@ func start() -> void:
 	add_child(timer)
 	timer.start()
 	game_ui.set_play_disabled(true)
-	
+
 
 func _on_timeout() -> void:
 	var enemies_for_iteration = enemies_per_iteration[level][iteration]
@@ -81,7 +82,7 @@ func _on_timeout() -> void:
 		timer.timeout.disconnect(_on_timeout)
 		remove_child(timer)
 		return
-	
+
 	path2d.add_child(enemies[enemies_for_iteration[counter]].instantiate())
 	counter += 1
 
@@ -100,3 +101,14 @@ func _on_enemy_died():
 		GameController.is_prepare.emit(true)
 		GameController.is_wave_val = false
 		GameController.is_prepare_val = true
+	if iteration == 5 && path2d.get_child_count() == 1 && hearts.get_child_count() != 0 && timer.is_stopped():
+		game_ui.show_next_level()
+
+
+func _on_next_level():
+	var index = level+1
+	if level_scenes.has(index) == false:
+		print("NIe ISTNIEJE")
+		return
+	var scene = level_scenes[index]
+	get_tree().change_scene_to_file(scene)

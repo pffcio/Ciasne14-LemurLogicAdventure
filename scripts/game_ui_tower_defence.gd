@@ -9,6 +9,8 @@ extends Control
 @onready var puzzle_texture = $CanvasLayer/Normal_UI/Panel/Puzzle/TextureRect
 @onready var puzzle_text = $CanvasLayer/Normal_UI/Panel/Puzzle/TextEdit
 
+signal next_level
+
 var last_puzzle: int = -1
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -56,3 +58,9 @@ func _on_random_question():
 	
 func set_play_disabled(disabled: bool):
 	play_button.disabled = disabled
+
+func show_next_level():
+	$CanvasLayer/Next_level.show()
+
+func _on_next_level_pressed():
+	next_level.emit()

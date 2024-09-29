@@ -74,6 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_u603c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -85,6 +86,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Pause" type="Button" parent="CanvasLayer/Normal_UI"]
 layout_mode = 0
@@ -190,9 +192,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -80.0
+offset_left = -285.0
 offset_top = 42.0
-offset_right = 142.0
+offset_right = -63.0
 offset_bottom = 99.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
@@ -233,6 +235,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Pause_menu"]
 layout_mode = 1
@@ -282,8 +285,56 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_lhr3e")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
 
+[node name="Next_level" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Next_level"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Next_level"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -95.0
+offset_right = 228.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_tdk8f")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_anapn")
+text = "Next Level"
+
+[node name="NextLevel" type="Button" parent="CanvasLayer/Next_level"]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 342.0
+offset_right = 627.0
+offset_bottom = 429.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3urno")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq7lt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cocbe")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wqa4q")
+
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="CanvasLayer/Next_level/NextLevel" to="." method="_on_next_level_pressed"]
