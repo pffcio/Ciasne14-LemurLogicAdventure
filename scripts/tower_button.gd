@@ -15,7 +15,7 @@ func _on_gui_input(event):
 	var tile = mapPath.local_to_map(get_global_mouse_position())
 	
 	## TODO add for each level similar boolean
-	var is_on_path = (mapPathRect.position.x <= tile.x && tile.x <= mapPathRect.size.x) && (mapPathRect.position.y <= tile.y && tile.y <= mapPathRect.position.y + mapPathRect.size.y)
+	var is_on_path = (mapPathRect.position.x <= tile.x && tile.x <= mapPathRect.size.x) && (mapPathRect.position.y <= tile.y && tile.y <= mapPathRect.position.y + mapPathRect.size.y - 1)
 	
 	if event is InputEventMouseButton && event.button_mask == 1:
 		add_child(tempTower)
@@ -40,6 +40,7 @@ func _on_gui_input(event):
 				path.add_child(tempTower)
 				tempTower.global_position = event.global_position
 				tempTower.get_node("Area").hide()
+				AudioPlayer.play_sfx("build_tower")
 	else:
 		if get_child_count() > 1:
 			get_child(1).queue_free()

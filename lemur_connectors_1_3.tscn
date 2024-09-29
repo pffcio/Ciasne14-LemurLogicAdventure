@@ -1,8 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dciv4uqmqbo6y"]
+[gd_scene load_steps=12 format=3 uid="uid://kyw3iu5ju65a"]
 
 [ext_resource type="Script" path="res://scripts/lemur_connectors_1_3.gd" id="1_pib17"]
 [ext_resource type="Script" path="res://scripts/VBoxContainerShake.gd" id="2_pnkc6"]
+[ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_kkxwm"]
 [ext_resource type="Texture2D" uid="uid://b8s25t41llmke" path="res://Arts/aseprite/menu_ui/star.png" id="3_xgrvc"]
+[ext_resource type="Texture2D" uid="uid://c3ofe16hghx1v" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Hover.svg" id="4_bq57o"]
+[ext_resource type="Texture2D" uid="uid://bew758i3oaafe" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Default.svg" id="5_5smtr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1p4i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhv5k"]
+texture = ExtResource("5_5smtr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0p6ee"]
+texture = ExtResource("4_bq57o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jbuxt"]
+texture = ExtResource("4_bq57o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtgti"]
+texture = ExtResource("5_5smtr")
 
 [node name="lemur_connectors_1_3" type="Control"]
 layout_mode = 3
@@ -27,6 +44,7 @@ script = ExtResource("2_pnkc6")
 [node name="Task" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_kkxwm")
 text = "W brakujące pole wybierz odpowiednie wyrażenie, aby zdanie było prawdziwe"
 
 [node name="QuestionImage" type="TextureRect" parent="VBoxContainer"]
@@ -36,6 +54,7 @@ layout_mode = 2
 [node name="Sentence" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_kkxwm")
 
 [node name="Answers" type="GridContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -43,14 +62,47 @@ columns = 3
 
 [node name="A1" type="Button" parent="VBoxContainer/Answers"]
 layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_kkxwm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1p4i")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0p6ee")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jbuxt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wtgti")
 text = "I"
 
 [node name="A2" type="Button" parent="VBoxContainer/Answers"]
 layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_kkxwm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1p4i")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0p6ee")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jbuxt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wtgti")
 text = "LUB"
 
 [node name="A3" type="Button" parent="VBoxContainer/Answers"]
 layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("3_kkxwm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1p4i")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hhv5k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0p6ee")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jbuxt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wtgti")
 text = "NIE"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

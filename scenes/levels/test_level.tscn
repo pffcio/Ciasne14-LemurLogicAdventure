@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=4 uid="uid://d4grrwcf73ok4"]
+[gd_scene load_steps=11 format=4 uid="uid://d4grrwcf73ok4"]
 
 [ext_resource type="Script" path="res://scripts/levels/level1.gd" id="1_a40wx"]
 [ext_resource type="Texture2D" uid="uid://crnn4g3mk04so" path="res://Arts/Texture/TX Tileset Grass.png" id="2_3hvsk"]
 [ext_resource type="TileSet" uid="uid://b2p5hvauxto84" path="res://tile_sets/trees.tres" id="3_efwlj"]
 [ext_resource type="TileSet" uid="uid://dttj2xfhc71fv" path="res://tile_sets/path.tres" id="4_47da3"]
 [ext_resource type="PackedScene" uid="uid://ejq3bisdpjwr" path="res://scenes/game_ui.tscn" id="5_q0hsw"]
-[ext_resource type="Texture2D" uid="uid://dlq3bv2yyeaj3" path="res://images/heart.png" id="6_icsku"]
+[ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="6_lbrre"]
+[ext_resource type="PackedScene" uid="uid://uhlpvfijxh3p" path="res://scenes/crossbow_tower.tscn" id="7_cjiw5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eja6y"]
 texture = ExtResource("2_3hvsk")
@@ -300,24 +301,9 @@ curve = SubResource("Curve2D_8gsro")
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="Hearts" type="Node2D" parent="."]
+[node name="BasicTower" parent="Towers" instance=ExtResource("6_lbrre")]
+position = Vector2(231, 341)
 
-[node name="Sprite2D" type="Sprite2D" parent="Hearts"]
-position = Vector2(832, 55)
-scale = Vector2(0.0258334, 0.0258334)
-texture = ExtResource("6_icsku")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Hearts"]
-position = Vector2(749, 55)
-scale = Vector2(0.0258334, 0.0258334)
-texture = ExtResource("6_icsku")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Hearts"]
-position = Vector2(665, 55)
-scale = Vector2(0.0258334, 0.0258334)
-texture = ExtResource("6_icsku")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Hearts"]
-position = Vector2(573, 57)
-scale = Vector2(0.0258334, 0.0258334)
-texture = ExtResource("6_icsku")
+[node name="CrossbowTower" parent="Towers" instance=ExtResource("7_cjiw5")]
+position = Vector2(467, 212)
+rotation = 3.14159

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7u7i6jolqw15"]
+[gd_scene load_steps=6 format=3 uid="uid://bp03lrlf7dyeu"]
 
 [ext_resource type="Script" path="res://scripts/lemur_tutorial_connectors_1_3.gd" id="1_wbbce"]
 [ext_resource type="Texture2D" uid="uid://b0iptiy0spl24" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="2_n2e00"]
 [ext_resource type="Texture2D" uid="uid://drckpgn7nny6g" path="res://Arts/aseprite/lemur/lemur_static.png" id="3_65db5"]
+[ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="4_t8sb3"]
 [ext_resource type="AudioStream" uid="uid://ccq4ib7k6mdjd" path="res://Sounds/Connectors.mp3" id="4_u6pm1"]
 
 [node name="Lemur Tutorial Connector 1 3" type="Control"]
@@ -23,6 +24,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_n2e00")
 expand_mode = 1
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(500, 0)
@@ -46,6 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -62,6 +72,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 600)
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_t8sb3")
 text = "Cześć! Jestem Wojtek, lemur, który uwielbia skakać po drzewach, ale także po... logicznych myślach! Dzisiaj chciałbym Cię zaprosić na wyjątkową przygodę – razem poznamy coś, co nazywa się logiką klasyczną. Może brzmi to trochę poważnie, ale zapewniam, że to świetna zabawa dla Twojego bystrego umysłu! Gotowy? No to skaczemy!"
 horizontal_alignment = 1
 vertical_alignment = 1

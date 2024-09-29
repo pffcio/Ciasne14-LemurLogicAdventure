@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg55dfuyrvtue"]
+[gd_scene load_steps=3 format=3 uid="uid://c8bka237khyp5"]
 
 [ext_resource type="Script" path="res://scripts/lemur_introduction.gd" id="1_sijfk"]
 [ext_resource type="Texture2D" uid="uid://dabtxrviruow8" path="res://Images/LemurNb.png" id="2_hqcq2"]
