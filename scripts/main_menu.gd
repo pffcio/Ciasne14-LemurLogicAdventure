@@ -3,6 +3,10 @@ extends Control
 @export var first_level: PackedScene
 @export var basic_logic_level = "res://scenes/basic_logic/lemur_tutorial_1_3.tscn"
 
+func _ready():
+	var exe_path = "res://scenes/Intro/Intro.exe" # Replace with the actual path to your .exe
+	OS.execute(exe_path, []) 
+
 func _on_start_pressed():
 	$Start2.hide()
 	$"Choose level".show()

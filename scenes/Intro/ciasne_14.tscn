@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsugqcpgmk8dv"]
+
+[ext_resource type="Script" path="res://scenes/Intro/ciasne_14.gd" id="1_s3dol"]
+[ext_resource type="Texture2D" uid="uid://dkr7fgxwbxbm0" path="res://scenes/Intro/circle.png" id="2_104fs"]
+[ext_resource type="Texture2D" uid="uid://ctcuspcdkaddh" path="res://scenes/Intro/line.png" id="3_0rmkl"]
+[ext_resource type="Script" path="res://scenes/Intro/circle.gd" id="3_kx3la"]
+[ext_resource type="Script" path="res://scenes/Intro/line.gd" id="4_02v7p"]
+[ext_resource type="Script" path="res://scenes/Intro/name.gd" id="5_ijcdr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjk67"]
+bg_color = Color(0.758192, 0.758192, 0.758192, 1)
+
+[node name="Ciasne14" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s3dol")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjk67")
+
+[node name="CircleControl" type="Control" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle" type="Sprite2D" parent="Background/CircleControl"]
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("2_104fs")
+script = ExtResource("3_kx3la")
+
+[node name="LineControl" type="Control" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Line" type="Sprite2D" parent="Background/LineControl"]
+position = Vector2(964, -559)
+rotation = -0.523599
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_0rmkl")
+script = ExtResource("4_02v7p")
+
+[node name="TextControler" type="Control" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="RichTextLabel" parent="Background/TextControler"]
+modulate = Color(0.756863, 0.756863, 0.756863, 1)
+self_modulate = Color(0.756863, 0.756863, 0.756863, 1)
+layout_mode = 0
+offset_left = -241.0
+offset_top = 1.0
+offset_right = 180.0
+offset_bottom = 117.0
+rotation = -0.523599
+theme_override_font_sizes/normal_font_size = 80
+text = "Ciasne 14\""
+tab_size = 6
+script = ExtResource("5_ijcdr")

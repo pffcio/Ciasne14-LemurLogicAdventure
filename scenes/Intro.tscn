@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfltsmjre6ytw"]
+
+[ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="1_f3326"]
+[ext_resource type="Texture2D" uid="uid://c3ofe16hghx1v" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Hover.svg" id="2_hi6hq"]
+[ext_resource type="Texture2D" uid="uid://bew758i3oaafe" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Rect/PlayText/Default.svg" id="3_8j31v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lwjuy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gai1n"]
+texture = ExtResource("2_hi6hq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3p64s"]
+texture = ExtResource("2_hi6hq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2l0kn"]
+texture = ExtResource("3_8j31v")
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="."]
+offset_left = 474.0
+offset_top = 483.0
+offset_right = 678.0
+offset_bottom = 575.0
+theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
+theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
+theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_colors/font_color = Color(0.313726, 0.152941, 0.141176, 1)
+theme_override_fonts/font = ExtResource("1_f3326")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lwjuy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gai1n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3p64s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2l0kn")
+text = "Back"
