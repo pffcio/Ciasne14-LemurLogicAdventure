@@ -14,8 +14,6 @@ func _on_gui_input(event):
 	var mapPathRect = mapPath.get_used_rect()
 	var tile = mapPath.local_to_map(get_global_mouse_position())
 	
-	print(mapPathRect)
-	
 	
 	## TODO add for each level similar boolean
 	var is_on_path = (mapPathRect.position.x <= tile.x && tile.x <= mapPathRect.size.x) && (mapPathRect.position.y <= tile.y && tile.y <= mapPathRect.position.y + mapPathRect.size.y - 1)
