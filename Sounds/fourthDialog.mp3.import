@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/fourthDialog.mp3-b2adc483b59d3278df4fc71fdf32
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

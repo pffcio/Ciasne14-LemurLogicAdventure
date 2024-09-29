@@ -1,10 +1,10 @@
 extends Node
 
 var sfx = {
-	"click": preload("res://Sounds/in_game/click.mp3"),
-	"click_release": preload("res://Sounds/in_game/click_release.mp3"),
-	"build_tower": preload("res://Sounds/in_game/build_tower.mp3"),
-	"hit": preload("res://Sounds/in_game/hit.mp3")
+	#"click": preload("res://Sounds/in_game/click.mp3"),
+	#"click_release": preload("res://Sounds/in_game/click_release.mp3"),
+	#"build_tower": preload("res://Sounds/in_game/build_tower.mp3"),
+	#"hit": preload("res://Sounds/in_game/hit.mp3")
 }
 
 var timed_sfx = {
@@ -23,36 +23,36 @@ var music_sfx_names = [
 var is_movement_running = false
 var is_clicked_sound = false
 
-func _input(event):
-	if event is InputEventMouseButton && event.pressed && !is_clicked_sound:
-		is_clicked_sound = true
-		var asp = AudioStreamPlayer.new()
-		asp.stream = sfx["click"]
-		asp.name = "SFX"
-		asp = add_to_bus(asp, "clicked")
-		
-		add_child(asp)
-		asp.play()
-		
-		await asp.finished
-		asp.queue_free()
-		is_clicked_sound = false
-	
-	#elif event is InputEventMouseButton && event.released && !is_clicked_sound
+#func _input(event):
+	#if event is InputEventMouseButton && event.pressed && !is_clicked_sound:
+		#is_clicked_sound = true
+		#var asp = AudioStreamPlayer.new()
+		##asp.stream = sfx["click"]
+		#asp.name = "SFX"
+		#asp = add_to_bus(asp, "clicked")
+		#
+		#add_child(asp)
+		#asp.play()
+		#
+		#await asp.finished
+		#asp.queue_free()
+		#is_clicked_sound = false
+	#
+	##elif event is InputEventMouseButton && event.released && !is_clicked_sound
 
 
-func play_sfx(sfx_name: String):
-	if sfx.has(sfx_name):
-		var asp = AudioStreamPlayer.new()
-		asp.stream = sfx[sfx_name]
-		asp.name = "SFX"
-		asp = add_to_bus(asp, sfx_name)
-		
-		add_child(asp)
-		asp.play()
-		
-		await asp.finished
-		asp.queue_free()
+#func play_sfx(sfx_name: String):
+	#if sfx.has(sfx_name):
+		#var asp = AudioStreamPlayer.new()
+		#asp.stream = sfx[sfx_name]
+		#asp.name = "SFX"
+		#asp = add_to_bus(asp, sfx_name)
+		#
+		#add_child(asp)
+		#asp.play()
+		#
+		#await asp.finished
+		#asp.queue_free()
 
 
 func play_timed_sfx(sfx_name: String, signal_name):

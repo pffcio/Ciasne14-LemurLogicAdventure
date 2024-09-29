@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Connectors.mp3-3b5f332eb724dbc49552f31c251b60
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
