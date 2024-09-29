@@ -23,6 +23,7 @@ BackgroundMusic="*res://scenes/Intro/background_music.tscn"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [rendering]
