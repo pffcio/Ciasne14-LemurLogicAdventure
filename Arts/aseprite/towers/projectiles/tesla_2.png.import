@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dtp2pjoegbglc"
+=======
+uid="uid://ckaat4sao4bl4"
+>>>>>>> 44e75cb17ad189ba6095e7dd0ff9d1469e96c1ec
 path="res://.godot/imported/tesla_2.png-e4a3f64452982cf9524c91c444d3399b.ctex"
 metadata={
 "vram_texture": false

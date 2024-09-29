@@ -1,0 +1,140 @@
+[gd_scene load_steps=20 format=3 uid="uid://pqq2acdvk6xu"]
+
+[ext_resource type="Script" path="res://scripts/logic_p_plate.gd" id="1_0ic0u"]
+[ext_resource type="Texture2D" uid="uid://be8vwnh1p2by3" path="res://Arts/aseprite/towers/and.png" id="1_4pjuv"]
+[ext_resource type="Texture2D" uid="uid://dmwvog133pl8v" path="res://Arts/aseprite/towers/implikacja.png" id="2_ko2nn"]
+[ext_resource type="Texture2D" uid="uid://cqc0cahled8sq" path="res://Arts/aseprite/towers/negacja.png" id="3_hcxps"]
+[ext_resource type="Texture2D" uid="uid://dfjqqf4qpyv4j" path="res://Arts/aseprite/towers/or.png" id="4_b6c0c"]
+[ext_resource type="Texture2D" uid="uid://dsdvqdyjrbu55" path="res://Arts/aseprite/towers/rownowaznosc.png" id="5_7g87k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwwef"]
+atlas = ExtResource("1_4pjuv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l1ks"]
+atlas = ExtResource("1_4pjuv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nfww"]
+atlas = ExtResource("2_ko2nn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwaip"]
+atlas = ExtResource("2_ko2nn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfk0v"]
+atlas = ExtResource("3_hcxps")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11n6u"]
+atlas = ExtResource("3_hcxps")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ddfo"]
+atlas = ExtResource("4_b6c0c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkdbu"]
+atlas = ExtResource("4_b6c0c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5xig"]
+atlas = ExtResource("5_7g87k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi0oo"]
+atlas = ExtResource("5_7g87k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dgf4x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwwef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l1ks")
+}],
+"loop": true,
+"name": &"and",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nfww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwaip")
+}],
+"loop": true,
+"name": &"implikacja",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfk0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11n6u")
+}],
+"loop": true,
+"name": &"negacja",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ddfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkdbu")
+}],
+"loop": false,
+"name": &"or",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5xig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi0oo")
+}],
+"loop": true,
+"name": &"rownowaznosc",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da22l"]
+size = Vector2(78, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwp6a"]
+size = Vector2(78, 74)
+
+[node name="LogicPPlate" type="Node2D"]
+script = ExtResource("1_0ic0u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dgf4x")
+animation = &"rownowaznosc"
+
+[node name="LogicLeft" type="Area2D" parent="."]
+position = Vector2(-55, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LogicLeft"]
+shape = SubResource("RectangleShape2D_da22l")
+
+[node name="LogicRight" type="Area2D" parent="."]
+position = Vector2(55, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LogicRight"]
+shape = SubResource("RectangleShape2D_kwp6a")
+
+[connection signal="body_entered" from="LogicLeft" to="." method="_on_logic_left_body_entered"]
+[connection signal="body_exited" from="LogicLeft" to="." method="_on_logic_left_body_exited"]
+[connection signal="body_entered" from="LogicRight" to="." method="_on_logic_right_body_entered"]
+[connection signal="body_exited" from="LogicRight" to="." method="_on_logic_right_body_exited"]
