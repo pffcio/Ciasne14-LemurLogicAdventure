@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp03lrlf7dyeu"]
+[gd_scene load_steps=8 format=3 uid="uid://bp03lrlf7dyeu"]
 
 [ext_resource type="Script" path="res://scripts/lemur_tutorial_connectors_1_3.gd" id="1_eh3n3"]
 [ext_resource type="PackedScene" uid="uid://p1ij77cbuya2" path="res://scenes/basic_logic/lemur_connectors_1_3.tscn" id="2_0e0su"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://drckpgn7nny6g" path="res://Arts/aseprite/lemur/lemur_static.png" id="3_elk0k"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="4_6l5xn"]
 [ext_resource type="AudioStream" uid="uid://ccq4ib7k6mdjd" path="res://Sounds/Connectors.mp3" id="5_b5cj7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_473ep"]
+bg_color = Color(0.345098, 0.180392, 0.145098, 0.392157)
 
 [node name="Lemur Tutorial Connector 1 3" type="Control"]
 layout_mode = 3
@@ -81,6 +84,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/Dialog"]
+show_behind_parent = true
+offset_left = -10.0
+offset_right = 618.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_473ep")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_b5cj7")
