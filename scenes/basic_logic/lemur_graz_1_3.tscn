@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/lemur_gratz_1_3.gd" id="1_cf788"]
 [ext_resource type="Texture2D" uid="uid://b0iptiy0spl24" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Background/Default.png" id="2_e5wkw"]
-[ext_resource type="PackedScene" uid="uid://cjofnifak10rp" path="res://scenes/main_menu.tscn" id="2_pr6dg"]
+[ext_resource type="PackedScene" uid="uid://cufy2flt1qkde" path="res://scenes/main_menu.tscn" id="2_pr6dg"]
 [ext_resource type="Texture2D" uid="uid://drckpgn7nny6g" path="res://Arts/aseprite/lemur/lemur_static.png" id="3_nep8f"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="4_errj6"]
 [ext_resource type="AudioStream" uid="uid://fy5mvdg2lf8j" path="res://Sounds/Gratz13.mp3" id="5_f2iii"]
