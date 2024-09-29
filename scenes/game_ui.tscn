@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=35 format=3 uid="uid://ejq3bisdpjwr"]
-=======
-[gd_scene load_steps=30 format=3 uid="uid://ejq3bisdpjwr"]
->>>>>>> d67197676a44a28c5afb004042736a1b56f225a7
+[gd_scene load_steps=36 format=3 uid="uid://dbtdi24yv4lyg"]
 
 [ext_resource type="Texture2D" uid="uid://dhk6hxdow5r48" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Default.svg" id="1_c26wg"]
 [ext_resource type="Script" path="res://scripts/game_ui_tower_defence.gd" id="1_u603c"]
@@ -18,9 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="8_chd7x"]
 [ext_resource type="Texture2D" uid="uid://btpnjpe2y6dpf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Play/Default.svg" id="8_e6s2d"]
 [ext_resource type="Texture2D" uid="uid://ubiw6ifbg12l" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Buttons/Square/Home/Hover.svg" id="9_m4bq8"]
-[ext_resource type="PackedScene" uid="uid://b058ef8dsd0v4" path="res://scenes/tesla_tower_button.tscn" id="11_yxaeg"]
+[ext_resource type="PackedScene" path="res://scenes/tesla_tower_button.tscn" id="11_yxaeg"]
 [ext_resource type="Texture2D" uid="uid://ebr4puhiavlp" path="res://Arts/aseprite/menu_ui/stop_sign.png" id="12_ekm25"]
-[ext_resource type="Texture2D" uid="uid://bxlswpro8fein" path="res://icon.svg" id="14_rgou3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ls6yn"]
 
@@ -222,7 +217,6 @@ last_wrap_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Normal_UI/Panel/Puzzle"]
 layout_mode = 2
-texture = ExtResource("14_rgou3")
 
 [node name="TextEdit" type="TextEdit" parent="CanvasLayer/Normal_UI/Panel/Puzzle"]
 layout_mode = 2
@@ -289,7 +283,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_pxt1i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xg08t")
 
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Normal_UI/Play" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_menu/Home" to="." method="_on_home_pressed"]

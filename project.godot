@@ -19,9 +19,11 @@ config/icon="res://scenes/Intro/icon.svg"
 
 GameController="*res://scripts/global.gd"
 AudioPlayer="*res://scripts/audio_player.gd"
+BackgroundMusic="*res://scenes/Intro/background_music.tscn"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [rendering]

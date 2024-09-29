@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://b2508ak2c8ori"]
+[gd_scene load_steps=11 format=4 uid="uid://b2508ak2c8ori"]
 
 [ext_resource type="Script" path="res://scripts/levels/level1.gd" id="1_r36kf"]
 [ext_resource type="Texture2D" uid="uid://crnn4g3mk04so" path="res://Arts/Texture/TX Tileset Grass.png" id="2_h60rp"]
 [ext_resource type="TileSet" uid="uid://b2p5hvauxto84" path="res://tile_sets/trees.tres" id="3_tttlo"]
 [ext_resource type="TileSet" uid="uid://dttj2xfhc71fv" path="res://tile_sets/path.tres" id="4_muvac"]
 [ext_resource type="PackedScene" uid="uid://ejq3bisdpjwr" path="res://scenes/game_ui.tscn" id="5_r5nc1"]
+[ext_resource type="PackedScene" path="res://scenes/logic_p_plate.tscn" id="7_aot1r"]
 [ext_resource type="Texture2D" uid="uid://cb034ttbxqh8" path="res://images/heart.png" id="9_vjamg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eja6y"]
@@ -326,3 +327,17 @@ texture = ExtResource("9_vjamg")
 position = Vector2(604, 44)
 scale = Vector2(0.0210417, 0.0210417)
 texture = ExtResource("9_vjamg")
+
+[node name="LogicPPlate" parent="." instance=ExtResource("7_aot1r")]
+position = Vector2(173, 204)
+
+[node name="LogicPPlate2" parent="." instance=ExtResource("7_aot1r")]
+position = Vector2(305, 445)
+plate_type = 1
+
+[node name="LogicPPlate4" parent="." instance=ExtResource("7_aot1r")]
+position = Vector2(582, 440)
+plate_type = 4
+
+[node name="LogicPPlate5" parent="." instance=ExtResource("7_aot1r")]
+position = Vector2(731, 201)

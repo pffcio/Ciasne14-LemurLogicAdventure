@@ -1,7 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cufy2flt1qkde"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_s2nlu"]
-[ext_resource type="PackedScene" uid="uid://d4grrwcf73ok4" path="res://scenes/levels/test_level.tscn" id="2_g054c"]
 [ext_resource type="Texture2D" uid="uid://k7ovxq5oubcj" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Background/Vector/Forest.svg" id="2_n8gng"]
 [ext_resource type="FontFile" uid="uid://bpj14jx70wapf" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/ChangaOne-Regular.ttf" id="3_m4k4n"]
 [ext_resource type="Texture2D" uid="uid://8ucsyo2iqyj0" path="res://Arts/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/svg/Button/Rect/Fill/Hover.svg" id="4_bf83e"]
@@ -41,10 +40,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s2nlu")
-<<<<<<< HEAD
-=======
-first_level = ExtResource("2_g054c")
->>>>>>> d67197676a44a28c5afb004042736a1b56f225a7
 
 [node name="Forest" type="Sprite2D" parent="."]
 position = Vector2(583, 321)
@@ -163,10 +158,10 @@ text = "Podstawy"
 
 [node name="Through game" type="Button" parent="Choose level"]
 layout_mode = 0
-offset_left = 474.0
-offset_top = 273.0
-offset_right = 678.0
-offset_bottom = 365.0
+offset_left = 413.0
+offset_top = 267.0
+offset_right = 730.0
+offset_bottom = 367.0
 theme_override_colors/font_hover_color = Color(0.345098, 0.180392, 0.145098, 1)
 theme_override_colors/font_pressed_color = Color(0.509804, 0.4, 0.298039, 1)
 theme_override_colors/font_focus_color = Color(0.313726, 0.152941, 0.141176, 1)
@@ -211,9 +206,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 454.0
+offset_left = 400.0
 offset_top = 66.0
-offset_right = 658.0
+offset_right = 712.0
 offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -236,9 +231,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 428.0
+offset_left = 395.0
 offset_top = 170.0
-offset_right = 684.0
+offset_right = 717.0
 offset_bottom = 262.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -261,9 +256,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 428.0
+offset_left = 403.0
 offset_top = 279.0
-offset_right = 684.0
+offset_right = 709.0
 offset_bottom = 371.0
 grow_horizontal = 2
 grow_vertical = 2

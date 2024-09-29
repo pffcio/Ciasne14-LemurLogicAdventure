@@ -8,10 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cjdxrp6tq42pq" path="res://scenes/basic_tower.tscn" id="6_lbrre"]
 [ext_resource type="PackedScene" uid="uid://uhlpvfijxh3p" path="res://scenes/crossbow_tower.tscn" id="7_cjiw5"]
 [ext_resource type="PackedScene" path="res://scenes/logic_p_plate.tscn" id="8_s7uno"]
-<<<<<<< HEAD
-=======
 [ext_resource type="Texture2D" uid="uid://cb034ttbxqh8" path="res://images/heart.png" id="9_wy7uo"]
->>>>>>> d67197676a44a28c5afb004042736a1b56f225a7
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eja6y"]
 texture = ExtResource("2_3hvsk")
